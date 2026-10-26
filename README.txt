@@ -6,6 +6,8 @@ needed: it's plain HTML, CSS and JavaScript, so it can be uploaded to any
 web host (e.g. GitHub Pages, Netlify, or the club's own hosting).
 
 PAGES
+  privacy.html      Privacy and cookies notice (linked in the footer)
+  404.html          Shown for a page that doesn't exist
   index.html        Home page
   history.html      Club history timeline
   first-xi.html     1st XI  } fixtures, results, captain, season record
@@ -18,7 +20,18 @@ PAGES
 FILES YOU EDIT
   js/data.js        Club details, captains, divisions, team descriptions
   js/matches.js     Fixtures and results (written by the Play-Cricket
-                    script, or edit by hand until the script is set up)
+                    script, or edit by hand until the script is set up).
+                    It starts empty; the old sample data is in
+                    tools/sample-matches.js if you want to demo the site.
+
+SEARCH AND HOSTING FILES (don't delete)
+  CNAME             tells GitHub Pages the address is www.broadwatercc.co.uk
+  robots.txt        lets search engines in, points them to the sitemap
+  sitemap.xml       list of pages for Google Search Console
+  .nojekyll         tells GitHub to publish the files as they are
+  fonts/            the two typefaces, stored here so visitors aren't
+                    sent to Google (SIL Open Font Licence)
+  images/share.png  the picture shown when a link is shared
 
 
 PULLING FIXTURES AND RESULTS FROM PLAY-CRICKET
@@ -57,13 +70,13 @@ It only uses Python's standard library (Python 3.8 or later).
    as soon as the league publishes them. Use --season 2027 to fetch a
    particular season. Then upload js/matches.js and the calendar folder.
 
-Running it automatically
-   If the site is hosted on GitHub Pages, .github/workflows/update-fixtures.yml
-   runs the script every night and on Saturday and Sunday evenings, then
-   publishes the changes. Add the token as a repository secret called
+Running it automatically (GitHub)
+   .github/workflows/update-fixtures.yml publishes the site whenever
+   files change on GitHub, and every night and on Saturday and Sunday
+   evenings it also runs the Play-Cricket script. The Play-Cricket step
+   is skipped until you add the token as a repository secret called
    PLAYCRICKET_API_TOKEN (Settings > Secrets and variables > Actions).
-   Otherwise, run the script by hand after each weekend, or schedule it
-   with Windows Task Scheduler.
+   Settings > Pages > Source must be set to "GitHub Actions".
 
 
 PHONE CALENDARS
@@ -86,13 +99,13 @@ and green.jpg. Keep files under ~500 KB each so pages load quickly.
 Photos of juniors need parental consent before publishing.
 
 
-WHAT NOT TO UPLOAD TO A NORMAL WEB HOST
-  tools/api_token.txt   (the secret token)
-  The rest of tools/ and .github/ are harmless but not needed online.
+NEVER UPLOAD
+  tools/api_token.txt   (the secret token; use the GitHub secret instead)
 
 
 STILL TO FILL IN
-  - Postcode and email (js/data.js, CLUB section)
+  - Postcode (js/data.js, CLUB section)
+  - Email routing rules in Cloudflare for info@, secretary@ and juniors@
   - League divisions and captains (js/data.js, TEAMS section)
   - Sponsor logos (index.html, "Our sponsors" section)
   - Junior training night, team managers, Welfare Officer (juniors.html)

@@ -134,7 +134,7 @@ function buildFooter() {
         <p><a href="mailto:${CLUB.email}">${esc(CLUB.email)}</a></p>
       </div>
     </div>
-    <p class="footer-base">&copy; ${new Date().getFullYear()} Broadwater Cricket Club</p>`;
+    <p class="footer-base">&copy; ${new Date().getFullYear()} Broadwater Cricket Club &nbsp;|&nbsp; <a href="privacy.html">Privacy</a></p>`;
   document.body.append(footer);
 }
 
@@ -167,8 +167,8 @@ function renderTable(container, opts) {
   const showTeam = !opts.team;
   if (!list.length) {
     container.innerHTML = `<p class="empty">${opts.mode === "fixtures"
-      ? "Next season's fixtures haven't been published yet. They'll appear here once the league releases them."
-      : "No results yet this season."}</p>`;
+      ? "Next season's fixtures haven't been published yet. They'll appear here as soon as the league releases them."
+      : "Results will appear here once the season gets under way."}</p>`;
     return;
   }
   container.innerHTML = `
@@ -326,6 +326,7 @@ function renderTeamPage() {
   if (title && season) title.textContent = `${season} season`;
   const count = r => res.filter(m => m.result === r).length;
   const sum = document.querySelector("[data-season]");
+  if (!res.length) { document.querySelector(".season-board")?.remove(); return; }
   if (sum) sum.innerHTML = [["Played", res.length], ["Won", count("W")], ["Lost", count("L")], ["Drawn", count("D") + count("T")]]
     .map(([l, n]) => `<div class="plate"><span class="n">${n}</span><span class="l">${l}</span></div>`).join("");
 }
@@ -357,6 +358,15 @@ function renderScoreboard() {
         <p class="board-sum">${fmtDate(next, { weekday: "long", day: "numeric", month: "long" })}, ${esc(next.time)}</p>
       </div>`;
   }
+  if (!html) {
+    const yr = new Date().getMonth() >= 8 ? new Date().getFullYear() + 1 : new Date().getFullYear();
+    html = `
+      <div class="board-row board-empty">
+        <p class="board-label">The ${yr} season</p>
+        <p class="board-teams">Fixtures coming soon</p>
+        <p class="board-sum">League fixtures appear here as soon as they're published. Spring nets start in March.</p>
+      </div>`;
+  }
   board.innerHTML = html + `<a class="board-link" href="fixtures.html">All fixtures and results</a>`;
 }
 
@@ -378,9 +388,26 @@ function initFixturesFilter() {
 
 /* ---------- map ---------- */
 function renderMap() {
+  // OpenStreetMap: a real map that sets no cookies and has no advertising
+  // tracking, so no cookie banner is needed.
+  const q = encodeURIComponent(CLUB.mapQuery);
+  const lat = CLUB.mapLat, lon = CLUB.mapLon, dx = 0.006, dy = 0.0032;
+  const bbox = [lon - dx, lat - dy, lon + dx, lat + dy].join(",");
   document.querySelectorAll("[data-map]").forEach(m => {
-    m.innerHTML = `<iframe title="Map showing ${esc(CLUB.ground)}" loading="lazy"
-      src="https://maps.google.com/maps?q=${encodeURIComponent(CLUB.mapQuery)}&z=16&output=embed"></iframe>`;
+    m.innerHTML = `
+      <div class="map-card">
+        <iframe class="map-frame" title="Map of ${esc(CLUB.ground)}" loading="lazy"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lon}"></iframe>
+        <div class="map-info">
+          <h3>${esc(CLUB.ground)}</h3>
+          <p>${esc(CLUB.address)}</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="https://www.google.com/maps/dir/?api=1&destination=${q}" rel="noopener">Get directions</a>
+            <a class="btn btn-line" href="https://www.openstreetmap.org/?mlat=${lat}&mlon=${lon}#map=17/${lat}/${lon}" rel="noopener">Larger map</a>
+          </div>
+          <p class="map-credit">Map &copy; <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> contributors</p>
+        </div>
+      </div>`;
   });
   document.querySelectorAll("[data-club]").forEach(n => { n.textContent = CLUB[n.dataset.club]; });
   document.querySelectorAll("[data-club-mail]").forEach(n => { n.href = "mailto:" + CLUB.email; if (!n.textContent.trim()) n.textContent = CLUB.email; });

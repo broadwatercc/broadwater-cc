@@ -5,6 +5,12 @@
    Body:     Libre Franklin
    ===================================================================== */
 
+/* Fonts are stored in the site (no requests to Google). Both are SIL Open Font Licence. */
+@font-face { font-family: "Libre Caslon Display"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/libre-caslon-display-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url("../fonts/libre-franklin-latin-wght-normal.woff2") format("woff2"); }
+
 :root {
   --navy: #16295c;
   --navy-deep: #0c1838;
@@ -140,7 +146,7 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 .hero {
   position: relative; min-height: 100vh; min-height: 100svh;
   display: flex; align-items: flex-end; color: var(--white);
-  background: var(--navy-deep) url("../images/hero.jpeg") center / cover no-repeat;
+  background: var(--navy-deep) url("../images/hero.jpg") center / cover no-repeat;
   overflow: hidden;
 }
 .hero::before {
@@ -447,3 +453,22 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 .cal-help summary { cursor: pointer; color: var(--navy); font-weight: 600; }
 .cal-help code { word-break: break-all; background: var(--white); padding: 2px 6px; }
 .sync-note { font-size: .85rem; color: var(--muted); margin: 0 0 12px; }
+
+/* ---------- find us: OpenStreetMap + details ---------- */
+.map { background: none; min-height: 0; }
+.map-card { height: 100%; display: flex; flex-direction: column; background: var(--navy); color: var(--white); }
+.map-frame { width: 100%; flex: 1; min-height: 300px; border: 0; display: block; }
+.map-info { padding: 24px 28px 20px; border-top: 4px solid var(--gold); }
+.map-info h3 { font-size: 1.7rem; margin-bottom: .15em; }
+.map-info p { color: #c8d1e6; margin-bottom: 16px; }
+.map-info .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.map-info .btn-line { color: var(--white); }
+.map-credit { font-size: .78rem; margin: 14px 0 0 !important; }
+.map-credit a { color: #c8d1e6; }
+
+/* ---------- plain text pages (privacy, 404) ---------- */
+.prose { max-width: 68ch; }
+.prose h2 { font-size: 1.7rem; margin-top: 1.6em; }
+.prose ul { padding-left: 1.2em; }
+.prose li { margin-bottom: .4em; }
+.board-empty .board-teams { font-size: 1.3rem; }
