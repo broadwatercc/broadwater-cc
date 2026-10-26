@@ -393,12 +393,15 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 .join-steps b { display: block; }
 
 /* ---------- sponsors ---------- */
-.sponsors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.sponsors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .sponsor-slot {
-  aspect-ratio: 16 / 7; border: 1px dashed var(--line); display: grid; place-items: center;
-  color: var(--muted); font-size: .9rem; text-align: center; padding: 12px; background: var(--white);
+  aspect-ratio: 600 / 260; border: 1px solid var(--line); display: grid; place-items: center;
+  color: var(--muted); font-size: .9rem; text-align: center; background: var(--white);
+  overflow: hidden; text-decoration: none; position: relative;
 }
-.sponsor-slot img { max-height: 70%; width: auto; }
+a.sponsor-slot:hover { border-color: var(--gold); }
+.sponsor-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 960px) { .sponsors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 /* ---------- footer ---------- */
 .site-footer { background: var(--navy-deep); color: #c8d1e6; padding: 64px 0 0; font-size: .95rem; }
