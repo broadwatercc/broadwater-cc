@@ -26,7 +26,10 @@ const CLUB = {
 
 /* ---------------------------------------------------------------------
    TEAMS
-   key  : used in js/matches.js and in each page's data-team attribute
+   key   : used in js/matches.js
+   focus : which part of the photo to keep in view in the banner at the
+           top of the team page, e.g. "center 15%" keeps the top of the
+           photo (faces), "center 50%" the middle, "center 90%" the bottom and in each page's data-team attribute
    --------------------------------------------------------------------- */
 const TEAMS = {
   "1st-xi": {
@@ -34,6 +37,7 @@ const TEAMS = {
     group: "saturday",
     page: "first-xi.html",
     image: "images/team-1st.jpg",
+    focus: "center 15%",
     league: "Sussex Cricket League",
     division: "Division to be confirmed",
     day: "Saturdays, April to September",
@@ -46,6 +50,7 @@ const TEAMS = {
     group: "saturday",
     page: "second-xi.html",
     image: "images/team-2nd.jpg",
+    focus: "center 15%",
     league: "Sussex Cricket League",
     division: "Division to be confirmed",
     day: "Saturdays, April to September",
@@ -58,6 +63,7 @@ const TEAMS = {
     group: "saturday",
     page: "third-xi.html",
     image: "images/team-3rd.jpg",
+    focus: "center 15%",
     league: "Sussex Cricket League",
     division: "Division to be confirmed",
     day: "Saturdays, April to September",

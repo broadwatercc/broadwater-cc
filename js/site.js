@@ -315,7 +315,10 @@ function renderTeamPage() {
     const v = t[n.dataset.t];
     if (v) n.textContent = v; else if (n.dataset.hideEmpty !== undefined) n.closest("[data-row]")?.remove();
   });
-  document.querySelectorAll("[data-t-img]").forEach(n => n.style.backgroundImage = `url("${t.image}")`);
+  document.querySelectorAll("[data-t-img]").forEach(n => {
+    n.style.backgroundImage = `url("${t.image}")`;
+    if (t.focus) n.style.setProperty("--focus", t.focus);
+  });
   document.querySelectorAll("[data-matches], [data-calendar]").forEach(n => n.dataset.team = key);
 
   // season summary from results

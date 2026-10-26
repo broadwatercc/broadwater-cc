@@ -146,7 +146,7 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 .hero {
   position: relative; min-height: 100vh; min-height: 100svh;
   display: flex; align-items: flex-end; color: var(--white);
-  background: var(--navy-deep) url("../images/hero.jpg") center / cover no-repeat;
+  background: var(--navy-deep) url("../images/hero.jpg") var(--focus, center) / cover no-repeat;
   overflow: hidden;
 }
 .hero::before {
@@ -207,7 +207,7 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 
 /* ---------- home intro ---------- */
 .intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
-.intro-photo { margin: 0; aspect-ratio: 4 / 5; background: var(--mist) center / cover; position: relative; }
+.intro-photo { margin: 0; aspect-ratio: 4 / 5; background: var(--mist) var(--focus, center) / cover; position: relative; }
 .intro-photo figcaption {
   position: absolute; left: 0; bottom: 0; background: var(--navy); color: var(--white);
   padding: 10px 16px; font-size: .88rem;
@@ -225,7 +225,7 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 .triptych { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .team-panel {
   position: relative; display: flex; align-items: flex-end; min-height: 460px;
-  color: var(--white); text-decoration: none; background: var(--navy) center / cover; overflow: hidden;
+  color: var(--white); text-decoration: none; background: var(--navy) var(--focus, center 25%) / cover; overflow: hidden;
 }
 .team-panel::before {
   content: ""; position: absolute; inset: 0;
@@ -311,9 +311,15 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 .tablist [role="tab"][aria-selected="true"] { color: var(--navy); border-bottom-color: var(--gold); }
 .tablist [role="tab"]:hover { color: var(--navy); }
 
-/* ---------- inner page hero ---------- */
+/* ---------- inner page hero ----------
+   PHOTO FOCUS: every photo can be told which part to keep in view when
+   it's cropped. Add  --focus: center 20%;  to the photo's style="..." in
+   the HTML (or "focus" in js/data.js for the team pages).
+   First value = left/right, second = top/bottom:
+     center 0%   = keep the very top     center 100% = keep the bottom
+     30% center  = keep the left side    70% center  = keep the right  */
 .page-hero {
-  position: relative; color: var(--white); background: var(--navy) center / cover no-repeat;
+  position: relative; color: var(--white); background: var(--navy) var(--focus, center 25%) / cover no-repeat;
   padding: clamp(80px, 12vw, 150px) 0 clamp(40px, 6vw, 64px);
 }
 .page-hero::before {
@@ -352,7 +358,7 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 .timeline h3 { margin-bottom: .3em; }
 .timeline p { max-width: 62ch; color: #2f3852; }
 .timeline figure { margin: 16px 0 0; max-width: 560px; }
-.timeline figure div { aspect-ratio: 16 / 9; background: var(--mist) center / cover; }
+.timeline figure div { aspect-ratio: 16 / 9; background: var(--mist) var(--focus, center) / cover; }
 .timeline figcaption { font-size: .88rem; color: var(--muted); margin-top: 8px; }
 .pullquote {
   font: 400 clamp(1.7rem, 3.4vw, 2.6rem)/1.25 var(--display); color: var(--white);
@@ -362,7 +368,7 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 
 /* ---------- generic two-column, cards for juniors/other ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
-.photo { aspect-ratio: 3 / 2; background: var(--mist) center / cover; }
+.photo { aspect-ratio: 3 / 2; background: var(--mist) var(--focus, center 25%) / cover; }
 .info-list { list-style: none; padding: 0; margin: 0 0 24px; border-top: 2px solid var(--navy); }
 .info-list li { padding: 12px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 140px 1fr; gap: 12px; }
 .info-list li span:first-child { font-size: .88rem; color: var(--muted); }
