@@ -12,17 +12,14 @@ const CLUB = {
   ground: "Broadwater Green",
   address: "Broadwater Green, Worthing, West Sussex",   // add postcode
   mapQuery: "Broadwater Green, Worthing",
-  // Centre of the map on the home page. To move it, find the spot on
-  // openstreetmap.org, right-click > "Show address" and copy the numbers.
   mapLat: 50.8299,
   mapLon: -0.3790,
   email: "info@broadwatercc.co.uk",
   website: "https://www.broadwatercc.co.uk/",
   playCricket: "https://broadwater.play-cricket.com/home",
-  facebook: "",      // e.g. "https://www.facebook.com/..."  (leave "" to hide)
-  instagram: "",
-  x: ""
-};
+  facebook: "https://www.facebook.com/p/Broadwater-Cricket-Club-100057381673063/?locale=en_GB",  
+  instagram: "https://www.instagram.com/broadwatercc/",
+  };
 
 /* ---------------------------------------------------------------------
    TEAMS
@@ -37,7 +34,7 @@ const TEAMS = {
     group: "saturday",
     page: "first-xi.html",
     image: "images/team-1st.jpg",
-    focus: "center 15%",
+    focus: "center 25%",
     league: "Sussex Cricket League",
     division: "Division to be confirmed",
     day: "Saturdays, April to September",
