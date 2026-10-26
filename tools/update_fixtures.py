@@ -49,7 +49,7 @@ API_BASE = "https://play-cricket.com/api/v2/"
 DEFAULT_TEAM_PATTERNS = [
     (r"\b(u|under)\s*-?\s*15", "u15"),
     (r"\b(u|under)\s*-?\s*13", "u13"),
-    (r"\b(u|under)\s*-?\s*12", "u12"),
+    (r"\b(u|under)\s*-?\s*14", "u14"),
     (r"t\s*20|20\s*/\s*20|twenty", "t20"),
     (r"sunday", "sunday"),
     (r"\b1st\b|first", "1st-xi"),
@@ -59,11 +59,11 @@ DEFAULT_TEAM_PATTERNS = [
 
 # How long each type of match lasts, in hours (used for calendar entries).
 MATCH_LENGTH_HOURS = {"1st-xi": 7, "2nd-xi": 7, "3rd-xi": 6, "sunday": 5,
-                      "t20": 3, "u15": 3, "u13": 3, "u12": 3}
+                      "t20": 3, "u15": 3, "u14": 3, "u13": 3}
 
 TEAM_NAMES = {"1st-xi": "1st XI", "2nd-xi": "2nd XI", "3rd-xi": "3rd XI",
               "sunday": "Sunday XI", "t20": "Midweek T20",
-              "u15": "Under 15s", "u13": "Under 13s", "u12": "Under 12s"}
+              "u15": "Under 15s", "u14": "Under 14s", "u13": "Under 13s"}
 
 
 # --------------------------------------------------------------------------

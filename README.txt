@@ -14,7 +14,7 @@ PAGES
   second-xi.html    2nd XI  }
   third-xi.html     3rd XI  }
   other-teams.html  Sunday XI and midweek T20
-  juniors.html      Under 15s, Under 13s, Under 12s (tabs)
+  juniors.html      Under 15s, Under 14s, Under 13s (tabs)
   fixtures.html     All fixtures and results, filterable by team
 
 FILES YOU EDIT
@@ -60,7 +60,7 @@ It only uses Python's standard library (Python 3.8 or later).
 4. Check the teams are recognised
        python tools/update_fixtures.py --list-teams
    Each Play-Cricket team is matched to a website team by its name
-   (1st XI, 2nd XI, 3rd XI, Sunday, T20, U15, U13, U12). If one says
+   (1st XI, 2nd XI, 3rd XI, Sunday, T20, U15, U14, U13). If one says
    NOT MAPPED, add its id to "team_ids" in settings.json, e.g.
        "t20": [123456]
 

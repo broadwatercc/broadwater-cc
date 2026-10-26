@@ -186,7 +186,7 @@ function sampleNotice() {
 /* ---------- phone calendars ----------
    Any element with data-calendar gets "Add to my calendar" buttons.
    Optional data-team="1st-xi" limits it to one team. */
-const MATCH_HOURS = { "1st-xi": 7, "2nd-xi": 7, "3rd-xi": 6, sunday: 5, t20: 3, u15: 3, u13: 3, u12: 3 };
+const MATCH_HOURS = { "1st-xi": 7, "2nd-xi": 7, "3rd-xi": 6, sunday: 5, t20: 3, u15: 3, u14: 3, u13: 3 };
 
 function icsEscape(s) { return String(s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
 function icsStamp(d) { // local wall-clock time, used with TZID=Europe/London
@@ -268,7 +268,7 @@ function renderCalendars() {
 }
 
 /* Any element with data-matches="results|fixtures|all" gets a table.
-   Optional: data-team="1st-xi" or data-teams="u15,u13,u12", data-limit="5" */
+   Optional: data-team="1st-xi" or data-teams="u15,u14,u13", data-limit="5" */
 function renderAllTables() {
   document.querySelectorAll("[data-matches]").forEach(c => {
     renderTable(c, {

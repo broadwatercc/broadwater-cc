@@ -14,8 +14,8 @@ const CLUB = {
   mapQuery: "Broadwater Green, Worthing",
   // Centre of the map on the home page. To move it, find the spot on
   // openstreetmap.org, right-click > "Show address" and copy the numbers.
-  mapLat: 50.8299,
-  mapLon: -0.3790,
+  mapLat: 50.8302,
+  mapLon: -0.3760,
   email: "info@broadwatercc.co.uk",
   website: "https://www.broadwatercc.co.uk/",
   playCricket: "https://broadwater.play-cricket.com/home",
@@ -93,9 +93,19 @@ const TEAMS = {
     page: "juniors.html#u15",
     image: "images/u15.jpg",
     league: "Junior league to be confirmed",
-    day: "Training night to be confirmed",
-    captain: "Team manager's name",
+    day: "Wednesday evenings",
+    captain: "Jonathan Hill",
     blurb: "Hard-ball cricket for players in school Years 9 and 10. Strong players are given chances in the adult sides."
+  },
+  "u14": {
+    name: "Under 14s",
+    group: "junior",
+    page: "juniors.html#u14",
+    image: "images/u14.jpg",
+    league: "Junior league to be confirmed",
+    day: "Wednesday evenings",
+    captain: "Dave Hall",
+    blurb: "League and friendly matches for players in school Years 8 and 9, building on the skills learned at Under 13."
   },
   "u13": {
     name: "Under 13s",
@@ -103,18 +113,8 @@ const TEAMS = {
     page: "juniors.html#u13",
     image: "images/u13.jpg",
     league: "Junior league to be confirmed",
-    day: "Training night to be confirmed",
-    captain: "Team manager's name",
-    blurb: "League and friendly matches for players in school Years 7 and 8, with a focus on developing all-round skills."
-  },
-  "u12": {
-    name: "Under 12s",
-    group: "junior",
-    page: "juniors.html#u12",
-    image: "images/u12.jpg",
-    league: "Junior league to be confirmed",
-    day: "Training night to be confirmed",
-    captain: "Team manager's name",
-    blurb: "A first taste of competitive hard-ball cricket for players in school Years 6 and 7."
+    day: "Wednesday evenings",
+    captain: "Dave Hall",
+    blurb: "Competitive hard-ball cricket for players in school Years 7 and 8, with a focus on developing all-round skills."
   }
 };
