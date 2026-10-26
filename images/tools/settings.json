@@ -1,0 +1,16 @@
+{
+  "site_id": "",
+  "club_id": "",
+  "play_cricket_subdomain": "broadwater",
+  "home_ground": "Broadwater Green, Worthing",
+  "team_ids": {
+    "1st-xi": [],
+    "2nd-xi": [],
+    "3rd-xi": [],
+    "sunday": [],
+    "t20": [],
+    "u15": [],
+    "u13": [],
+    "u14": []
+  }
+}
