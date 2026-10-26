@@ -14,8 +14,8 @@ const CLUB = {
   mapQuery: "Broadwater Green, Worthing",
   // Centre of the map on the home page. To move it, find the spot on
   // openstreetmap.org, right-click > "Show address" and copy the numbers.
-  mapLat: 50.8302,
-  mapLon: -0.3760,
+  mapLat: 50.8299,
+  mapLon: -0.3790,
   email: "info@broadwatercc.co.uk",
   website: "https://www.broadwatercc.co.uk/",
   playCricket: "https://broadwater.play-cricket.com/home",
