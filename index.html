@@ -68,7 +68,36 @@
       </figure>
     </div>
   </section>
-
+    <!-- NETS APPEAL (Crowdfunder) -->
+  <style>
+    .appeal { position: relative; overflow: hidden; background: var(--gold); color: var(--navy-deep); padding: clamp(40px, 6vw, 64px) 0; }
+    .appeal::before { /* a cricket-net mesh pattern */
+      content: ""; position: absolute; inset: 0; opacity: .18; pointer-events: none;
+      background:
+        repeating-linear-gradient(45deg, var(--navy-deep) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(-45deg, var(--navy-deep) 0 1px, transparent 1px 22px);
+    }
+    .appeal .wrap { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px 48px; flex-wrap: wrap; }
+    .appeal-text { max-width: 60ch; }
+    .appeal h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin-bottom: .35em; text-wrap: balance; }
+    .appeal p { margin: 0; font-size: 1.1rem; }
+    .appeal .btn { background: var(--navy); color: var(--white); padding: 1em 1.8em; font-size: 1rem; white-space: nowrap; }
+    .appeal .btn:hover { background: var(--navy-deep); color: var(--gold); }
+    .appeal small { display: block; margin-top: 10px; font-size: .85rem; text-align: center; }
+  </style>
+  <section class="appeal" aria-labelledby="appeal-title">
+    <div class="wrap">
+      <div class="appeal-text">
+        <h2 id="appeal-title">Help us replace Worthing's only public cricket net</h2>
+        <p>The net on Broadwater Green is free for everyone to use. After 11 years it needs a new surface and a cover, and every donation helps keep cricket on the green open to all.</p>
+      </div>
+      <div>
+        <a class="btn" href="https://www.crowdfunder.co.uk/p/broadwatercc-cricketnets" target="_blank" rel="noopener">Donate on Crowdfunder</a>
+        <small>Any money left over goes to the upkeep of the pavilion.</small>
+      </div>
+    </div>
+  </section>
+  
   <!-- TEAMS -->
   <section class="section section-mist" id="teams">
     <div class="wrap">
