@@ -13,18 +13,18 @@
 
 const PHOTO_FOCUS = {
   "hero.jpg": "50% 50%",
-  "green.jpg": "50% 50%",
-  "BCCStumpsKit.JPG": "50% 50%",
-  "team-1st.jpg": "50% 25%",
-  "team-2nd.jpg": "50% 15%",
-  "team-3rd.jpg": "50% 15%",
+  "green.jpg": "52% 72%",
+  "BCCStumpsKit.JPG": "49% 72%",
+  "team-1st.jpg": "49% 30%",
+  "team-2nd.jpg": "52% 47%",
+  "team-3rd.jpg": "49% 43%",
   "sunday.jpg": "50% 30%",
   "t20.jpg": "50% 30%",
-  "juniors.jpg": "50% 30%",
-  "u15.jpg": "50% 30%",
-  "u13.jpg": "50% 30%",
+  "juniors.jpg": "37% 28%",
+  "u15.jpg": "51% 32%",
+  "u13.jpg": "47% 40%",
   "u12.jpg": "50% 30%",
-  "history-hero.jpg": "50% 30%",
+  "history-hero.jpg": "52% 9%",
   "history-1771.jpg": "50% 50%",
-  "history-team.jpg": "50% 30%"
+  "history-team.jpg": "51% 14%"
 };
