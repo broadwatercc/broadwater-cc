@@ -53,7 +53,7 @@ Club news will appear on this page, and our latest Instagram posts are shown bel
    and show just the "Follow us" button.
    --------------------------------------------------------------------- */
 const INSTAGRAM = {
-  feedUrl: "",
+  feedUrl: "https://feeds.behold.so/h2cmvZRvGkdMWBwjsDQS",
   profile: "https://www.instagram.com/broadwatercc/",
   handle: "@broadwatercc"
 };
