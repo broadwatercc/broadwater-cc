@@ -51,7 +51,7 @@ const TEAMS = {
     league: "Sussex Cricket League",
     division: "9 West",
     day: "Saturdays, April to September",
-    captain: "Ryan Silverthorn",
+    captain: "Ryan Silverthorne",
     viceCaptain: "Josh Blakey",
     blurb: "A mix of experienced club cricketers and players stepping up from the 3rd XI and juniors, competing in the Sussex Cricket League."
   },
