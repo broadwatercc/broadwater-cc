@@ -36,11 +36,11 @@ const TEAMS = {
     image: "images/team-1st.jpg",
     focus: "center 25%",
     league: "Sussex Cricket League",
-    division: "Division to be confirmed",
+    division: "5 West",
     day: "Saturdays, April to September",
-    captain: "Captain's name",
-    viceCaptain: "Vice-captain's name",
-    blurb: "The club's flagship side, playing 50-over league cricket in the Sussex Cricket League. Home matches are played on Broadwater Green, Worthing's only public cricket ground."
+    captain: "Chris Green",
+    viceCaptain: "Ben Challen",
+    blurb: "The club's flagship side, playing 45-over league cricket in the Sussex Cricket League. Home matches are played on Broadwater Green, Worthing's only public cricket ground."
   },
   "2nd-xi": {
     name: "2nd XI",
@@ -49,10 +49,10 @@ const TEAMS = {
     image: "images/team-2nd.jpg",
     focus: "center 15%",
     league: "Sussex Cricket League",
-    division: "Division to be confirmed",
+    division: "9 West",
     day: "Saturdays, April to September",
-    captain: "Captain's name",
-    viceCaptain: "Vice-captain's name",
+    captain: "Ryan Silverthorn",
+    viceCaptain: "Josh Blakey",
     blurb: "A mix of experienced club cricketers and players stepping up from the 3rd XI and juniors, competing in the Sussex Cricket League."
   },
   "3rd-xi": {
@@ -62,10 +62,10 @@ const TEAMS = {
     image: "images/team-3rd.jpg",
     focus: "center 15%",
     league: "Sussex Cricket League",
-    division: "Division to be confirmed",
+    division: "12 West",
     day: "Saturdays, April to September",
-    captain: "Captain's name",
-    viceCaptain: "Vice-captain's name",
+    captain: "Nick Pottinger",
+    viceCaptain: "Jonathan Hill",
     blurb: "Competitive league cricket with a friendly edge. The 3rd XI is where many of our juniors play their first adult cricket, alongside players returning to the game."
   },
   "sunday": {
@@ -76,7 +76,7 @@ const TEAMS = {
     league: "Friendlies",
     division: "",
     day: "Sundays, May to September",
-    captain: "Captain's name",
+    captain: "Jonathan Hill",
     blurb: "Friendly cricket against clubs from across Sussex and touring sides. Ideal if you can't commit every week, are new to the club, or just enjoy a relaxed game and a drink afterwards."
   },
   "t20": {
@@ -85,9 +85,9 @@ const TEAMS = {
     page: "other-teams.html#t20",
     image: "images/t20.jpg",
     league: "T20 competition to be confirmed",
-    division: "",
+    division: "Sussex Slam",
     day: "Weekday evenings, May to August",
-    captain: "Captain's name",
+    captain: "Dave Hall",
     blurb: "Fast, short-format cricket on summer evenings. Twenty overs a side, usually done before sunset."
   },
   "u15": {
@@ -95,17 +95,17 @@ const TEAMS = {
     group: "junior",
     page: "juniors.html#u15",
     image: "images/u15.jpg",
-    league: "Junior league to be confirmed",
+    league: "Sussex Junior Cricket League West Area",
     day: "Wednesday evenings",
     captain: "Jonathan Hill",
-    blurb: "Hard-ball cricket for players in school Years 9 and 10. Strong players are given chances in the adult sides."
+    blurb: "Hard-ball cricket for players in school Years 9 and 10. Some players are given chances in the adult sides."
   },
   "u14": {
     name: "Under 14s",
     group: "junior",
     page: "juniors.html#u14",
     image: "images/u14.jpg",
-    league: "Junior league to be confirmed",
+    league: "Sussex Junior Cricket League West Area",
     day: "Wednesday evenings",
     captain: "Dave Hall",
     blurb: "League and friendly matches for players in school Years 8 and 9, building on the skills learned at Under 13."
@@ -115,7 +115,7 @@ const TEAMS = {
     group: "junior",
     page: "juniors.html#u13",
     image: "images/u13.jpg",
-    league: "Junior league to be confirmed",
+    league: "Sussex Junior Cricket League West Area",
     day: "Wednesday evenings",
     captain: "Dave Hall",
     blurb: "Competitive hard-ball cricket for players in school Years 7 and 8, with a focus on developing all-round skills."
