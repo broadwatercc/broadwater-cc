@@ -53,7 +53,7 @@ const TEAMS = {
     day: "Saturdays, April to September",
     captain: "Ryan Silverthorne",
     viceCaptain: "Josh Blakey",
-    blurb: "A mix of experienced club cricketers and players stepping up from the 3rd XI and juniors, competing in the Sussex Cricket League."
+    blurb: "A mix of experienced club cricketers and players stepping up from the 3rd XI and juniors, competing in 40-over games in the Sussex Cricket League."
   },
   "3rd-xi": {
     name: "3rd XI",
@@ -66,7 +66,7 @@ const TEAMS = {
     day: "Saturdays, April to September",
     captain: "Nick Pottinger",
     viceCaptain: "Jonathan Hill",
-    blurb: "Competitive league cricket with a friendly edge. The 3rd XI is where many of our juniors play their first adult cricket, alongside players returning to the game."
+    blurb: "Competitive 40-over league cricket. The 3rd XI is where many of our juniors play their first adult cricket, alongside more experienced players."
   },
   "sunday": {
     name: "Sunday XI",
