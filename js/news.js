@@ -31,10 +31,19 @@ Second paragraph here.`
    ===================================================================== */
 
 const NEWS = [
+  {
+      id: "awards-night-2026",
+      date: "2026-10-27",
+      title: "End of season awards dinner",
+      image: "menu.png",
+      alt: "Menu",
+      text: `Our annual end of season awards meal is coming up on Friday, November 13th @Efes Town
 
+If you haven't chosen your menu options yet, text Jonathan - number on the original Instagram post.`
+    },
   {
     id: "new-website",
-    date: "2026-10-27",
+    date: "2026-10-26",
     title: "Welcome to our new website",
     image: "",
     alt: "",
