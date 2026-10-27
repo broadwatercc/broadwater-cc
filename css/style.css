@@ -124,7 +124,7 @@ body[data-page="home"] .site-header.nav-open { background: var(--navy); box-shad
 #site-nav .nav-cta:hover { color: var(--navy-deep); background: var(--white); }
 .menu-toggle { display: none; }
 
-@media (max-width: 1020px) {
+@media (max-width: 1180px) {
   .menu-toggle {
     display: block; background: none; color: var(--white); border: 2px solid rgba(255,255,255,.6);
     padding: 6px 14px; font: 600 .9rem var(--body); border-radius: 2px; cursor: pointer;
