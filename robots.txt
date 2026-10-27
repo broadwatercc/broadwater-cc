@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /tools/
+Disallow: /photo-focus.html
 
 Sitemap: https://www.broadwatercc.co.uk/sitemap.xml

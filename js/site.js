@@ -416,9 +416,28 @@ function renderMap() {
   document.querySelectorAll("[data-club-mail]").forEach(n => { n.href = "mailto:" + CLUB.email; if (!n.textContent.trim()) n.textContent = CLUB.email; });
 }
 
+/* ---------- photo focus (settings in js/photos.js) ---------- */
+function applyPhotoFocus() {
+  // photos.js is loaded here, so the page files never need changing.
+  if (typeof PHOTO_FOCUS === "undefined") {
+    if (applyPhotoFocus.loading) return;
+    applyPhotoFocus.loading = true;
+    const s = document.createElement("script");
+    s.src = "js/photos.js?v=" + Date.now();
+    s.onload = applyPhotoFocus;
+    document.head.append(s);
+    return;
+  }
+  document.querySelectorAll(".hero, .page-hero, .team-panel, .photo, .intro-photo, .timeline figure div").forEach(el => {
+    const m = getComputedStyle(el).backgroundImage.match(/images\/([^"')]+)/);
+    if (m && PHOTO_FOCUS[m[1]]) el.style.setProperty("--focus", PHOTO_FOCUS[m[1]]);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   buildHeader();
   renderTeamPage();
+  applyPhotoFocus();
   initFixturesFilter();
   renderAllTables();
   renderCalendars();

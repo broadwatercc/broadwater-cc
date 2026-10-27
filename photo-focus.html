@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photo focus tool | Broadwater Cricket Club</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/photos.js" defer></script>
+  <script src="js/matches.js" defer></script>
+  <script src="js/site.js" defer></script>
+  <style>
+    .tool-intro ol { padding-left: 1.2em; }
+    .tool-intro li { margin-bottom: .4em; }
+    .photo-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 28px; padding: 32px 0; border-top: 1px solid var(--line); align-items: start; }
+    .photo-row h2 { font-size: 1.5rem; margin-bottom: .2em; }
+    .photo-row .used { color: var(--muted); font-size: .92rem; margin-bottom: 14px; }
+    .pick { position: relative; display: inline-block; cursor: crosshair; max-width: 100%; line-height: 0; border: 2px solid var(--navy); }
+    .pick img { max-width: 100%; max-height: 320px; width: auto; display: block; }
+    .pick .dot { position: absolute; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%;
+      background: var(--gold); border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--navy); pointer-events: none; }
+    .missing { padding: 40px 20px; background: var(--mist); color: var(--muted); text-align: center; line-height: 1.5; }
+    .previews { display: grid; grid-template-columns: 3fr 1fr; gap: 12px; align-items: end; }
+    .pv { background: var(--navy) center / cover no-repeat; }
+    .pv-wide { aspect-ratio: 3 / 1; }
+    .pv-tall { aspect-ratio: 3 / 4; }
+    .pv-label { font-size: .82rem; color: var(--muted); margin-top: 6px; }
+    .value { margin-top: 12px; font-size: .9rem; }
+    .value code { background: var(--mist); padding: 2px 6px; }
+    .value button { margin-left: 8px; font: 600 .85rem var(--body); background: none; border: 0; color: var(--navy); text-decoration: underline; cursor: pointer; }
+    .save-bar { position: sticky; bottom: 0; background: var(--navy); color: var(--white); padding: 16px 0; z-index: 20; }
+    .save-bar .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; justify-content: space-between; }
+    .save-bar p { margin: 0; color: #c8d1e6; }
+    .save-bar button { cursor: pointer; font-family: var(--body); border: 0; }
+    #output { width: 100%; min-height: 220px; font: .85rem/1.5 ui-monospace, Consolas, monospace; padding: 12px; border: 2px solid var(--navy); margin-top: 12px; }
+    @media (max-width: 800px) { .photo-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body data-page="tool">
+<a class="skip" href="#main">Skip to content</a>
+
+<main id="main">
+  <section class="section" style="padding-bottom:24px">
+    <div class="wrap tool-intro prose">
+      <h1 style="font-size:clamp(2.2rem,5vw,3.4rem)">Photo focus</h1>
+      <p class="lede">Choose which part of each photo stays in view when the website crops it. This page is just for you; it isn't linked from the site.</p>
+      <ol>
+        <li><b>Click on the most important part of each photo</b>, such as the players' faces. The previews show how it will look in a wide banner and a tall panel.</li>
+        <li>When you've done them all, click <b>Copy settings</b> at the bottom of the screen.</li>
+        <li>On GitHub, open the <b>js</b> folder, click <b>photos.js</b>, then the <b>pencil</b> icon. Press <b>Ctrl + A</b>, then <b>Ctrl + V</b> to paste, and click <b>Commit changes</b>.</li>
+      </ol>
+      <p>Your clicks are remembered on this computer, so you can come back and adjust them later.</p>
+    </div>
+  </section>
+
+  <section style="padding-bottom:40px">
+    <div class="wrap" id="rows"></div>
+    <div class="wrap" style="margin-top:24px">
+      <label for="output"><b>Your settings</b> (this is what gets copied)</label>
+      <textarea id="output" readonly></textarea>
+    </div>
+  </section>
+
+  <div class="save-bar">
+    <div class="wrap">
+      <p id="status">Click on each photo, then copy your settings.</p>
+      <button class="btn btn-gold" id="copy" type="button">Copy settings</button>
+    </div>
+  </div>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const USED = {
+    "hero.jpg": "Home page, top banner",
+    "green.jpg": "Home page intro, history page",
+    "BCCStumpsKit.JPG": "Fixtures page banner",
+    "team-1st.jpg": "1st XI page banner, home page team panel",
+    "team-2nd.jpg": "2nd XI page banner, home page team panel",
+    "team-3rd.jpg": "3rd XI page banner, home page team panel",
+    "sunday.jpg": "Sunday & T20 page banner and photo, home page panel",
+    "t20.jpg": "Sunday & T20 page, T20 photo",
+    "juniors.jpg": "Juniors page banner, home page panel",
+    "u15.jpg": "Juniors page, Under 15s tab",
+    "u13.jpg": "Juniors page, Under 14s tab",
+    "u12.jpg": "Juniors page, Under 13s tab",
+    "history-hero.jpg": "History page banner",
+    "history-1771.jpg": "History page, 1771 picture",
+    "history-team.jpg": "History page, archive team photo"
+  };
+  const KEY = "bcc-photo-focus";
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { saved = {}; }
+  const focus = Object.assign({}, PHOTO_FOCUS, saved);
+  const rows = document.getElementById("rows");
+  const out = document.getElementById("output");
+  const v = n => Math.max(0, Math.min(100, Math.round(n)));
+
+  function writeOutput() {
+    const lines = Object.keys(focus).map(k => `  "${k}": "${focus[k]}"`).join(",\n");
+    out.value =
+`/* =====================================================================
+   PHOTO FOCUS - which part of each photo stays in view when it's cropped
+   ---------------------------------------------------------------------
+   Easiest way to change these: open  www.broadwatercc.co.uk/photo-focus.html
+   click on each photo, then copy the result and paste it over this
+   whole file on GitHub.
+
+   Each line is:   "photo file name": "left-right% top-bottom%",
+     "50% 0%"   keeps the top        "50% 100%"  keeps the bottom
+     "0% 50%"   keeps the left       "100% 50%"  keeps the right
+     "50% 50%"  keeps the middle (the normal setting)
+   ===================================================================== */
+
+const PHOTO_FOCUS = {
+${lines}
+};
+`;
+    try { localStorage.setItem(KEY, JSON.stringify(focus)); } catch (e) {}
+  }
+
+  Object.keys(focus).forEach(file => {
+    const row = document.createElement("article");
+    row.className = "photo-row";
+    const src = "images/" + file + "?v=" + Date.now();
+    row.innerHTML = `
+      <div>
+        <h2>${file}</h2>
+        <p class="used">${USED[file] || ""}</p>
+        <div class="pick" role="button" tabindex="0" aria-label="Click to choose the focus point for ${file}">
+          <img src="${src}" alt="${file}">
+          <span class="dot"></span>
+        </div>
+        <p class="value">Setting: <code></code><button type="button">Reset to middle</button></p>
+      </div>
+      <div>
+        <div class="previews">
+          <div><div class="pv pv-wide" style="background-image:url('${src}')"></div><p class="pv-label">Wide banner (top of pages)</p></div>
+          <div><div class="pv pv-tall" style="background-image:url('${src}')"></div><p class="pv-label">Tall panel</p></div>
+        </div>
+      </div>`;
+    rows.append(row);
+
+    const pick = row.querySelector(".pick"), img = row.querySelector("img"), dot = row.querySelector(".dot");
+    const code = row.querySelector("code"), pvs = row.querySelectorAll(".pv");
+    function show() {
+      const [x, y] = focus[file].split(" ").map(parseFloat);
+      dot.style.left = x + "%"; dot.style.top = y + "%";
+      code.textContent = focus[file];
+      pvs.forEach(p => p.style.backgroundPosition = focus[file]);
+    }
+    img.addEventListener("error", () => {
+      pick.outerHTML = `<div class="missing">No photo called <b>${file}</b> in the images folder yet.<br>Upload one with exactly this name and it will appear here.</div>`;
+    });
+    pick.addEventListener("click", e => {
+      const r = img.getBoundingClientRect();
+      focus[file] = `${v((e.clientX - r.left) / r.width * 100)}% ${v((e.clientY - r.top) / r.height * 100)}%`;
+      show(); writeOutput();
+      document.getElementById("status").textContent = `Updated ${file}. Copy settings when you've finished.`;
+    });
+    pick.addEventListener("keydown", e => {
+      const [x, y] = focus[file].split(" ").map(parseFloat);
+      const d = { ArrowLeft: [-5, 0], ArrowRight: [5, 0], ArrowUp: [0, -5], ArrowDown: [0, 5] }[e.key];
+      if (!d) return;
+      e.preventDefault();
+      focus[file] = `${v(x + d[0])}% ${v(y + d[1])}%`; show(); writeOutput();
+    });
+    row.querySelector(".value button").addEventListener("click", () => { focus[file] = "50% 50%"; show(); writeOutput(); });
+    show();
+  });
+  writeOutput();
+
+  document.getElementById("copy").addEventListener("click", async () => {
+    const status = document.getElementById("status");
+    try { await navigator.clipboard.writeText(out.value); status.textContent = "Copied. Now paste it over everything in js/photos.js on GitHub."; }
+    catch (e) { out.select(); document.execCommand("copy"); status.textContent = "Copied. Now paste it over everything in js/photos.js on GitHub."; }
+  });
+});
+</script>
+</body>
+</html>
