@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BCC News | Broadwater Cricket Club</title>
+  <meta name="description" content="Club news from Broadwater Cricket Club, Worthing, and our latest photos from Instagram.">
+  <link rel="canonical" href="https://www.broadwatercc.co.uk/news.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Broadwater Cricket Club">
+  <meta property="og:title" content="BCC News">
+  <meta property="og:description" content="Club news from Broadwater Cricket Club, Worthing, and our latest photos from Instagram.">
+  <meta property="og:url" content="https://www.broadwatercc.co.uk/news.html">
+  <meta property="og:image" content="https://www.broadwatercc.co.uk/images/share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#16295c">
+  <link rel="icon" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
+  <link rel="preload" href="fonts/libre-caslon-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/libre-franklin-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/matches.js" defer></script>
+  <script src="js/news.js" defer></script>
+  <script src="js/site.js" defer></script>
+  <style>
+    /* ---------- news posts ---------- */
+    .news-list { display: grid; gap: 0; }
+    .post { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 36px; padding: 40px 0; border-top: 1px solid var(--line); scroll-margin-top: calc(var(--header-h) + 16px); }
+    .post:first-child { border-top: 2px solid var(--navy); }
+    .post.no-image { grid-template-columns: minmax(0, 1fr); }
+    .post-photo { aspect-ratio: 4 / 3; background: var(--mist) center / cover no-repeat; }
+    .post-date { font-size: .9rem; font-weight: 600; color: var(--gold-ink); margin: 0 0 6px; }
+    .post h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: .4em; }
+    .post-body { max-width: 66ch; }
+    .post-body p { color: #2f3852; }
+    .post-link { background: none; border: 0; padding: 0; font: 600 .88rem var(--body); color: var(--navy); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+    .post-link:hover { color: var(--gold-ink); }
+    .post:target { background: linear-gradient(90deg, #fbf6ea, transparent 70%); }
+    .news-empty { padding: 32px; background: var(--mist); color: var(--muted); }
+    .news-more { margin-top: 28px; }
+
+    /* ---------- Instagram ---------- */
+    .insta-head { display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+    .insta-head h2 { margin: 0; }
+    .insta-head p { margin: 6px 0 0; color: #c8d1e6; }
+    .insta-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .insta-tile { position: relative; display: block; aspect-ratio: 1; overflow: hidden; background: var(--navy-soft); outline-offset: 2px; }
+    .insta-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+    .insta-tile:hover img { transform: scale(1.04); }
+    .insta-tile::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 0 var(--gold); transition: box-shadow .2s; }
+    .insta-tile:hover::after, .insta-tile:focus-visible::after { box-shadow: inset 0 0 0 4px var(--gold); }
+    .insta-tile .kind { position: absolute; top: 10px; right: 10px; background: rgba(12,24,56,.75); color: var(--white); font-size: .72rem; font-weight: 600; padding: 3px 8px; }
+    @media (max-width: 800px) {
+      .post { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 32px 0; }
+      .insta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (prefers-reduced-motion: reduce) { .insta-tile img { transition: none; } }
+  </style>
+</head>
+<body data-page="news">
+<a class="skip" href="#main">Skip to content</a>
+
+<main id="main">
+  <section class="page-hero" style="background-image:url('images/green.jpg')">
+    <div class="wrap">
+      <p class="crumb">News from the green</p>
+      <h1>BCC News</h1>
+      <p class="sub-title">Club news, match reports and events from Broadwater Cricket Club.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="news-list" id="news-list"></div>
+    </div>
+  </section>
+
+  <section class="section section-navy" id="instagram">
+    <div class="wrap">
+      <div class="insta-head">
+        <div>
+          <h2>On Instagram</h2>
+          <p id="insta-sub">Photos from matches, training and club events.</p>
+        </div>
+        <a class="btn btn-gold" id="insta-follow" href="https://www.instagram.com/broadwatercc/" target="_blank" rel="noopener">Follow us on Instagram</a>
+      </div>
+      <div class="insta-grid" id="insta-grid" hidden></div>
+    </div>
+  </section>
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const list = document.getElementById("news-list");
+  const safe = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+  // Turn plain text into paragraphs, and make web and email addresses clickable
+  const paras = t => String(t || "").trim().split(/\n\s*\n/).map(p => "<p>" + safe(p).replace(/\n/g, "<br>")
+      .replace(/(https?:\/\/[^\s<]+[^\s<.,;:!?)])/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+      .replace(/([\w.+-]+@[\w-]+\.[\w.-]*\w)/g, '<a href="mailto:$1">$1</a>') + "</p>").join("");
+  const nice = d => { const x = new Date(d + "T12:00"); return isNaN(x) ? d : x.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }); };
+
+  /* ----- club news ----- */
+  const posts = (typeof NEWS !== "undefined" ? NEWS : []).filter(p => p && p.title)
+    .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+  if (!posts.length) {
+    list.innerHTML = `<p class="news-empty">No news yet. Check back soon, or follow us on Instagram below.</p>`;
+  } else {
+    list.innerHTML = posts.map((p, i) => {
+      const id = safe(p.id || "post-" + i);
+      const img = p.image ? `<div class="post-photo" style="background-image:url('images/${safe(p.image)}')" role="img" aria-label="${safe(p.alt || p.title)}"></div>` : "";
+      return `
+        <article class="post${img ? "" : " no-image"}" id="${id}">
+          ${img}
+          <div class="post-body">
+            <p class="post-date"><time datetime="${safe(p.date)}">${nice(p.date)}</time></p>
+            <h2>${safe(p.title)}</h2>
+            ${paras(p.text)}
+            <button class="post-link" type="button" data-id="${id}">Share this story</button>
+          </div>
+        </article>`;
+    }).join("");
+    list.addEventListener("click", async e => {
+      const b = e.target.closest(".post-link"); if (!b) return;
+      const url = location.origin + location.pathname + "#" + b.dataset.id;
+      const title = b.closest(".post").querySelector("h2").textContent;
+      try {
+        if (navigator.share) { await navigator.share({ title, url }); return; }
+        await navigator.clipboard.writeText(url);
+        b.textContent = "Link copied";
+      } catch (err) { if (err && err.name !== "AbortError") prompt("Copy this link:", url); }
+      setTimeout(() => b.textContent = "Share this story", 2500);
+    });
+    // jump to a shared story once the posts have been drawn
+    if (location.hash) { const t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+  }
+
+  /* ----- Instagram (Behold JSON feed) ----- */
+  if (typeof INSTAGRAM === "undefined") return;
+  const follow = document.getElementById("insta-follow");
+  if (INSTAGRAM.profile) follow.href = INSTAGRAM.profile;
+  if (INSTAGRAM.handle) follow.textContent = "Follow " + INSTAGRAM.handle;
+  if (!INSTAGRAM.feedUrl) return;
+  const grid = document.getElementById("insta-grid");
+  fetch(INSTAGRAM.feedUrl)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(data => {
+      const items = (data.posts || []).slice(0, 6);
+      if (!items.length) return;
+      grid.innerHTML = items.map(p => {
+        const s = p.sizes || {};
+        const src = (s.medium && s.medium.mediaUrl) || (s.small && s.small.mediaUrl) || p.thumbnailUrl || p.mediaUrl;
+        const cap = (p.prunedCaption || p.caption || "").trim();
+        const alt = p.altText || (cap ? cap.slice(0, 120) : "Instagram post from Broadwater Cricket Club");
+        const kind = p.mediaType === "VIDEO" ? (p.isReel ? "Reel" : "Video") : p.mediaType === "CAROUSEL_ALBUM" ? "Gallery" : "";
+        return `<a class="insta-tile" href="${safe(p.permalink)}" target="_blank" rel="noopener" title="${safe(cap.slice(0, 200))}">
+                  <img src="${safe(src)}" alt="${safe(alt)}" loading="lazy">
+                  ${kind ? `<span class="kind">${kind}</span>` : ""}
+                </a>`;
+      }).join("");
+      grid.hidden = false;
+    })
+    .catch(() => { /* feed unavailable: the Follow button still shows */ });
+});
+</script>
+</body>
+</html>

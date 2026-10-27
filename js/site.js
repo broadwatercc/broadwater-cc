@@ -4,6 +4,7 @@
 
 const NAV = [
   { label: "Home", href: "index.html", page: "home" },
+  { label: "BCC News", href: "news.html", page: "news" },
   { label: "History", href: "history.html", page: "history" },
   { label: "Saturday XIs", page: "saturday", children: [
       { label: "1st XI", href: "first-xi.html" },
@@ -122,6 +123,7 @@ function buildFooter() {
       <div>
         <h2 class="footer-h">Club</h2>
         <ul>
+          <li><a href="news.html">BCC News</a></li>
           <li><a href="history.html">Our history</a></li>
           <li><a href="fixtures.html">Fixtures and results</a></li>
           <li><a href="${CLUB.playCricket}" rel="noopener">Play-Cricket scorecards</a></li>
