@@ -28,5 +28,5 @@ const PHOTO_FOCUS = {
   "history-1771.jpg": "50% 50%",
   "history-team.jpg": "51% 14%",
   "minis.jpg": "50% 40%",
-  "news-hero.JPG": "50% 50%"
+  "news-hero.JPG": "36% 78%"
 };
