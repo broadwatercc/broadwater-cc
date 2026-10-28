@@ -103,12 +103,3 @@ NEVER UPLOAD
   tools/api_token.txt   (the secret token; use the GitHub secret instead)
 
 
-STILL TO FILL IN
-  - Postcode (js/data.js, CLUB section)
-  - Email routing rules in Cloudflare for info@, secretary@ and juniors@
-  - League divisions and captains (js/data.js, TEAMS section)
-  - Sponsor logos (index.html, "Our sponsors" section)
-  - Junior training night, team managers, Welfare Officer (juniors.html)
-  - Club stories for the 20th century (history.html); check the history
-    facts with the club before publishing
-  - Sunday/T20 captains and formats (other-teams.html)
