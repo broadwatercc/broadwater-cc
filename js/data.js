@@ -10,7 +10,7 @@ const CLUB = {
   name: "Broadwater Cricket Club",
   founded: 1771,
   ground: "Broadwater Green",
-  address: "Broadwater Green, Worthing, West Sussex",   // add postcode
+  address: "Broadwater Green, Worthing, West Sussex. BN14 9DJ",  
   mapQuery: "Broadwater Green, Worthing",
   mapLat: 50.8299,
   mapLon: -0.3790,
