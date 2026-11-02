@@ -50,8 +50,8 @@ DEFAULT_TEAM_PATTERNS = [
     (r"\b(u|under)\s*-?\s*15", "u15"),
     (r"\b(u|under)\s*-?\s*13", "u13"),
     (r"\b(u|under)\s*-?\s*14", "u14"),
-    (r"t\s*20|20\s*/\s*20|twenty", "t20"),
-    (r"sunday", "sunday"),
+    (r"t\s*20|20\s*/\s*20|twenty|fire|midweek|slam", "t20"),
+    (r"sunday|friendly", "sunday"),
     (r"\b1st\b|first", "1st-xi"),
     (r"\b2nd\b|second", "2nd-xi"),
     (r"\b3rd\b|third", "3rd-xi"),
@@ -115,8 +115,26 @@ def fetch_season(settings, token, season):
 # --------------------------------------------------------------------------
 # Turning Play-Cricket data into the website's format
 # --------------------------------------------------------------------------
+DETECTED_CLUB_ID = None
+
+
 def our_club_id(settings):
-    return str(settings.get("club_id") or settings["site_id"])
+    if settings.get("club_id"):
+        return str(settings["club_id"])
+    return DETECTED_CLUB_ID or str(settings["site_id"])
+
+
+def detect_club_id(matches):
+    """On a club's own Play-Cricket site every match involves that club,
+    so the club id that appears most often is ours."""
+    from collections import Counter
+    count = Counter()
+    for m in matches:
+        for side in ("home", "away"):
+            cid = str(m.get(f"{side}_club_id") or "")
+            if cid:
+                count[cid] += 1
+    return count.most_common(1)[0][0] if count else None
 
 
 def team_key_for(team_id, team_name, settings):
@@ -389,6 +407,14 @@ def main():
         fixtures += f
         results += r
 
+    global DETECTED_CLUB_ID
+    if not settings.get("club_id"):
+        DETECTED_CLUB_ID = detect_club_id(fixtures + results)
+        if DETECTED_CLUB_ID:
+            names = {m.get(f"{s}_club_name") for m in fixtures + results for s in ("home", "away")
+                     if str(m.get(f"{s}_club_id")) == DETECTED_CLUB_ID}
+            print(f"Our club on Play-Cricket: {', '.join(n for n in names if n)} (club id {DETECTED_CLUB_ID})")
+
     if args.list_teams:
         club_id, seen = our_club_id(settings), {}
         for m in fixtures + results:
@@ -398,6 +424,15 @@ def main():
         for tid, name in sorted(seen.items(), key=lambda x: x[1] or ""):
             print(f"  {name:<25} id {tid:<10} -> {team_key_for(tid, name, settings) or 'NOT MAPPED'}")
         return
+
+    club_id, seen = our_club_id(settings), {}
+    for m in fixtures + results:
+        for side in ("home", "away"):
+            if str(m.get(f"{side}_club_id")) == club_id:
+                seen[str(m.get(f"{side}_team_id"))] = m.get(f"{side}_team_name")
+    print("Teams found on Play-Cricket:")
+    for tid, name in sorted(seen.items(), key=lambda x: x[1] or ""):
+        print(f"  {name:<25} id {tid:<10} -> {team_key_for(tid, name, settings) or 'NOT MAPPED'}")
 
     unmapped = set()
     matches = build_matches(fixtures, results, settings, unmapped)
