@@ -10,7 +10,7 @@ const CLUB = {
   name: "Broadwater Cricket Club",
   founded: 1771,
   ground: "Broadwater Green",
-  address: "Broadwater Green, Worthing, West Sussex. BN14 9DJ",  
+  address: "Broadwater Green, Broadwater Street West, Worthing BN14 7TQ",
   mapQuery: "Broadwater Green, Worthing",
   mapLat: 50.8299,
   mapLon: -0.3790,
