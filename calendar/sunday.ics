@@ -1,0 +1,123 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Broadwater Cricket Club//Fixtures//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Broadwater CC - Sunday XI
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:pc-7328074@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260503T140000
+DTEND;TZID=Europe/London:20260503T190000
+SUMMARY:Broadwater Sunday XI v Bolney CC Friendly XI (H) - Won by 89 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 177-9 (40.0) v 88 (31.1)\nhttps://broadwat
+ er.play-cricket.com/website/results/7328074
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7305587@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260517T130000
+DTEND;TZID=Europe/London:20260517T180000
+SUMMARY:Broadwater Sunday XI v Worthing Chargers CC Friendly XI (H) - Lost 
+ by 110 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 94 (26.2) v 204-7 (35)\nhttps://broadwater
+ .play-cricket.com/website/results/7305587
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7328075@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260517T140000
+DTEND;TZID=Europe/London:20260517T190000
+SUMMARY:Broadwater Sunday XI v Worthing Chargers CC Friendly XI (H) - Lost 
+ by 110 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 94 (26.2) v 204-7 (35)\nhttps://broadwater
+ .play-cricket.com/website/results/7328075
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7328076@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260614T140000
+DTEND;TZID=Europe/London:20260614T190000
+SUMMARY:Broadwater Sunday XI v Worthing CC Sunday XI (A) - Lost by 90 runs
+LOCATION:Manor Sports Ground
+DESCRIPTION:Friendly\nBroadwater 119 (31.1) v 209-6 (35)\nhttps://broadwate
+ r.play-cricket.com/website/results/7328076
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7667348@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260712T123000
+DTEND;TZID=Europe/London:20260712T173000
+SUMMARY:Broadwater Sunday XI v Broadwater CC President's XI (H) - Lost by 4
+ 1 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 199 (27.1) v 240-8 (35)\nhttps://broadwate
+ r.play-cricket.com/website/results/7667348
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7328079@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260726T140000
+DTEND;TZID=Europe/London:20260726T190000
+SUMMARY:Broadwater Sunday XI v Angmering CC Friendly XI (H) - Won by 6 wick
+ ets
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 179-4 (28.2) v 178-5 (30.0)\nhttps://broad
+ water.play-cricket.com/website/results/7328079
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7716178@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260809T140000
+DTEND;TZID=Europe/London:20260809T190000
+SUMMARY:Broadwater Sunday XI v Seaview Storm CC Twenty20 (H) - Lost by 42 r
+ uns
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 194 (29.4) v 236-9 (28.4)\nhttps://broadwa
+ ter.play-cricket.com/website/results/7716178
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7328081@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260823T140000
+DTEND;TZID=Europe/London:20260823T190000
+SUMMARY:Broadwater Sunday XI v Barns Green CC Misfits Sunday XI (A) - Lost 
+ by 1 wicket
+LOCATION:Barns Green & Itchingfield Village Club
+DESCRIPTION:Friendly\nBroadwater 165-6 (30.0) v 167-9 (30.0)\nhttps://broad
+ water.play-cricket.com/website/results/7328081
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7496438@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260906T133000
+DTEND;TZID=Europe/London:20260906T183000
+SUMMARY:Broadwater Sunday XI v Boxgrove CC Friendly XI (H) - Won by 11 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 165-8 (35.0) v 154 (31.4)\nhttps://broadwa
+ ter.play-cricket.com/website/results/7496438
+END:VEVENT
+END:VCALENDAR

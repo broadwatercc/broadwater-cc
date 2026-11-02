@@ -1,0 +1,126 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Broadwater Cricket Club//Fixtures//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Broadwater CC - Midweek T20
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:pc-7560670@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260507T180000
+DTEND;TZID=Europe/London:20260507T210000
+SUMMARY:Broadwater Midweek T20 v Goring By Sea CC Goring Lions 2 (H) - Won 
+ by 7 wickets
+LOCATION:Broadwater Green
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 76-3 (13.4) v 75-8 (20.0)\nht
+ tps://broadwater.play-cricket.com/website/results/7560670
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7560673@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260520T180000
+DTEND;TZID=Europe/London:20260520T210000
+SUMMARY:Broadwater Midweek T20 v Worthing Tigers CC T20 Green (H) - Lost by
+  16 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 140-2 (20.0) v 156-9 (20.0)\n
+ https://broadwater.play-cricket.com/website/results/7560673
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7560676@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260528T180000
+DTEND;TZID=Europe/London:20260528T210000
+SUMMARY:Broadwater Midweek T20 v Rustington CC Rustington Royals (A) - Won 
+ by 2 runs
+LOCATION:Rustington Sports and Social Club
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 143-6 (20.0) v 141-3 (20.0)\n
+ https://broadwater.play-cricket.com/website/results/7560676
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7560680@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260618T180000
+DTEND;TZID=Europe/London:20260618T210000
+SUMMARY:Broadwater Midweek T20 v Goring By Sea CC Goring Lions 2 (A) - Won 
+ by 58 runs
+LOCATION:Fernhurst Recreation Ground
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 148-6 (20.0) v 90-6 (20.0)\nh
+ ttps://broadwater.play-cricket.com/website/results/7560680
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7560681@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260625T180000
+DTEND;TZID=Europe/London:20260625T210000
+SUMMARY:Broadwater Midweek T20 v Ferring CC Ferring Falcons (A) - Won by 7 
+ wickets
+LOCATION:Ferring Cricket Club
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 137-3 (17.3) v 135-3 (20.0)\n
+ https://broadwater.play-cricket.com/website/results/7560681
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7720215@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260708T180000
+DTEND;TZID=Europe/London:20260708T210000
+SUMMARY:Broadwater Midweek T20 v Friends of Worthing FC (H) - Lost by 27 ru
+ ns
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 130 (18.1) v 157-7 (20)\nhttps://broadwate
+ r.play-cricket.com/website/results/7720215
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7560683@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260713T180000
+DTEND;TZID=Europe/London:20260713T210000
+SUMMARY:Broadwater Midweek T20 v Worthing Tigers CC T20 Green (A) - Lost by
+  62 runs
+LOCATION:Fernhurst Recreation Ground
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 101-6 (20) v 163-6 (20)\nhttp
+ s://broadwater.play-cricket.com/website/results/7560683
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7560686@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260720T180000
+DTEND;TZID=Europe/London:20260720T210000
+SUMMARY:Broadwater Midweek T20 v Rustington CC Rustington Royals (H) - Won 
+ by 21 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 157-2 (20.0) v 136-8 (20.0)\n
+ https://broadwater.play-cricket.com/website/results/7560686
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7560671@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260722T180000
+DTEND;TZID=Europe/London:20260722T210000
+SUMMARY:Broadwater Midweek T20 v Ferring CC Ferring Falcons (A) - Won by 9 
+ wickets
+LOCATION:Broadwater Green
+DESCRIPTION:Sussex Men's Trophy 3\nBroadwater 118-1 (15.2) v 117 (19.2)\nht
+ tps://broadwater.play-cricket.com/website/results/7560671
+END:VEVENT
+END:VCALENDAR

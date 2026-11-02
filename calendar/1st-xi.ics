@@ -1,0 +1,246 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Broadwater Cricket Club//Fixtures//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Broadwater CC - 1st XI
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:pc-7264331@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260418T123000
+DTEND;TZID=Europe/London:20260418T193000
+SUMMARY:Broadwater 1st XI v Findon CC 1st XI (A) - Lost by 4 wickets
+LOCATION:Findon Cricket Club
+DESCRIPTION:Friendly\nBroadwater 273-5 (40) v 274-6 (38.3)\nhttps://broadwa
+ ter.play-cricket.com/website/results/7264331
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7264332@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260425T130000
+DTEND;TZID=Europe/London:20260425T200000
+SUMMARY:Broadwater 1st XI v Arundel CC 1st XI (A) - Won by 2 wickets
+LOCATION:Arundel Cricket Club
+DESCRIPTION:Friendly\nBroadwater 210-8 (38) v 209-7 (40)\nhttps://broadwate
+ r.play-cricket.com/website/results/7264332
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7194487@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260502T130000
+DTEND;TZID=Europe/London:20260502T200000
+SUMMARY:Broadwater 1st XI v Portslade CC 1st XI (A) - Cancelled
+LOCATION:Benfield Valley Pavilion
+DESCRIPTION:Friendly\nhttps://broadwater.play-cricket.com/website/results/7
+ 194487
+STATUS:CANCELLED
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343091@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260509T123000
+DTEND;TZID=Europe/London:20260509T193000
+SUMMARY:Broadwater 1st XI v Ram CC 1st XI (A) - Won by 4 wickets
+LOCATION:West Green Park
+DESCRIPTION:Division 4 West\nBroadwater 102-6 (23.4) v 100 (21)\nhttps://br
+ oadwater.play-cricket.com/website/results/7343091
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343093@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260516T123000
+DTEND;TZID=Europe/London:20260516T193000
+SUMMARY:Broadwater 1st XI v Horsham CC 2nd XI (H) - Won by 30 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 177-2 (36) v 207 (42.2)\nhttps://br
+ oadwater.play-cricket.com/website/results/7343093
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343102@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260523T123000
+DTEND;TZID=Europe/London:20260523T193000
+SUMMARY:Broadwater 1st XI v Three Bridges CC 2nd XI (A) - Lost by 5 wickets
+LOCATION:Three Bridges Cricket Club
+DESCRIPTION:Division 4 West\nBroadwater 257-7 (45) v 258-5 (36.1)\nhttps://
+ broadwater.play-cricket.com/website/results/7343102
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343103@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260530T123000
+DTEND;TZID=Europe/London:20260530T193000
+SUMMARY:Broadwater 1st XI v Crawley Eagles CC 1st XI (H) - Won by 66 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 259 (45) v 193 (35.2)\nhttps://broa
+ dwater.play-cricket.com/website/results/7343103
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343110@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260606T123000
+DTEND;TZID=Europe/London:20260606T193000
+SUMMARY:Broadwater 1st XI v Littlehampton\, Clapham & Patching CC 1st XI (A
+ ) - Cancelled
+LOCATION:The Sportsfield
+DESCRIPTION:Division 4 West\nhttps://broadwater.play-cricket.com/website/re
+ sults/7343110
+STATUS:CANCELLED
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343115@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260613T123000
+DTEND;TZID=Europe/London:20260613T193000
+SUMMARY:Broadwater 1st XI v Horsham Trinity CC 1st XI (A) - Won by 33 runs
+LOCATION:Horsham Trinity CC
+DESCRIPTION:Division 4 West\nBroadwater 182-9 (45.0) v 149 (31.4)\nhttps://
+ broadwater.play-cricket.com/website/results/7343115
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343118@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260620T123000
+DTEND;TZID=Europe/London:20260620T193000
+SUMMARY:Broadwater 1st XI v West Chiltington & Thakeham CC 2nd XI (H) - Los
+ t by 180 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 144 (36.2) v 324-5 (45)\nhttps://br
+ oadwater.play-cricket.com/website/results/7343118
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343123@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260627T123000
+DTEND;TZID=Europe/London:20260627T193000
+SUMMARY:Broadwater 1st XI v Henfield CC 1st XI (A) - Lost by 6 wickets
+LOCATION:Henfield Common
+DESCRIPTION:Division 4 West\nBroadwater 91 (27.3) v 92-4 (28.2)\nhttps://br
+ oadwater.play-cricket.com/website/results/7343123
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343127@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260704T123000
+DTEND;TZID=Europe/London:20260704T193000
+SUMMARY:Broadwater 1st XI v Burgess Hill CC 1st XI (H) - Lost by 6 wickets
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 194 (43.1) v 198-4 (43.1)\nhttps://
+ broadwater.play-cricket.com/website/results/7343127
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343132@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260711T123000
+DTEND;TZID=Europe/London:20260711T193000
+SUMMARY:Broadwater 1st XI v Ram CC 1st XI (H) - Lost by 17 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 208 (44.2) v 225 (42)\nhttps://broa
+ dwater.play-cricket.com/website/results/7343132
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343137@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260718T123000
+DTEND;TZID=Europe/London:20260718T193000
+SUMMARY:Broadwater 1st XI v Horsham CC 2nd XI (A) - Lost by 72 runs
+LOCATION:Horsham CC
+DESCRIPTION:Division 4 West\nBroadwater 284-4 (45) v 356-5 (45)\nhttps://br
+ oadwater.play-cricket.com/website/results/7343137
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343141@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260725T123000
+DTEND;TZID=Europe/London:20260725T193000
+SUMMARY:Broadwater 1st XI v Three Bridges CC 2nd XI (H) - Won by 5 wickets
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 87-5 (15.2) v 86 (31.5)\nhttps://br
+ oadwater.play-cricket.com/website/results/7343141
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343146@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260801T123000
+DTEND;TZID=Europe/London:20260801T193000
+SUMMARY:Broadwater 1st XI v Crawley Eagles CC 1st XI (A) - Lost by 9 wicket
+ s
+LOCATION:Cherry Lane Playing Fields
+DESCRIPTION:Division 4 West\nBroadwater 67 (20) v 70-1 (10.5)\nhttps://broa
+ dwater.play-cricket.com/website/results/7343146
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343151@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260808T123000
+DTEND;TZID=Europe/London:20260808T193000
+SUMMARY:Broadwater 1st XI v Littlehampton\, Clapham & Patching CC 1st XI (H
+ ) - Lost by 3 wickets
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 196-7 (45) v 200-7 (34.5)\nhttps://
+ broadwater.play-cricket.com/website/results/7343151
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343156@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260815T123000
+DTEND;TZID=Europe/London:20260815T193000
+SUMMARY:Broadwater 1st XI v Horsham Trinity CC 1st XI (H) - Lost by 136 run
+ s
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nBroadwater 157 (30.5) v 293-9 (45)\nhttps://br
+ oadwater.play-cricket.com/website/results/7343156
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343165@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260822T123000
+DTEND;TZID=Europe/London:20260822T193000
+SUMMARY:Broadwater 1st XI v West Chiltington & Thakeham CC 2nd XI (A) - Los
+ t by 3 wickets
+LOCATION:West Chiltington Recreation Ground
+DESCRIPTION:Division 4 West\nBroadwater 180 (42.1) v 183-7 (32.5)\nhttps://
+ broadwater.play-cricket.com/website/results/7343165
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343166@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260829T123000
+DTEND;TZID=Europe/London:20260829T193000
+SUMMARY:Broadwater 1st XI v Henfield CC 1st XI (H) - Cancelled
+LOCATION:Broadwater Green
+DESCRIPTION:Division 4 West\nhttps://broadwater.play-cricket.com/website/re
+ sults/7343166
+STATUS:CANCELLED
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7343171@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260905T123000
+DTEND;TZID=Europe/London:20260905T193000
+SUMMARY:Broadwater 1st XI v Burgess Hill CC 1st XI (A) - Lost by 208 runs
+LOCATION:St Johns Park\, Burgess Hill\, Sussex
+DESCRIPTION:Division 4 West\nBroadwater 99 (28.1) v 307-4 (45)\nhttps://bro
+ adwater.play-cricket.com/website/results/7343171
+END:VEVENT
+END:VCALENDAR

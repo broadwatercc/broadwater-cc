@@ -1,0 +1,192 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Broadwater Cricket Club//Fixtures//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Broadwater CC - 3rd XI
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:pc-7344888@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260509T130000
+DTEND;TZID=Europe/London:20260509T190000
+SUMMARY:Broadwater 3rd XI v Clymping CC 2nd XI (A) - Lost by 5 wickets
+LOCATION:Clymping Sports & Social Club
+DESCRIPTION:Division 11 West (South)\nBroadwater 86 (26.2) v 90-5 (17.4)\nh
+ ttps://broadwater.play-cricket.com/website/results/7344888
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344894@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260516T130000
+DTEND;TZID=Europe/London:20260516T190000
+SUMMARY:Broadwater 3rd XI v Lancing Manor CC 1st XI (H) - Won by 11 runs
+LOCATION:Hill Barn West
+DESCRIPTION:Division 11 West (South)\nBroadwater 150-7 (40.0) v 139 (37.2)\
+ nhttps://broadwater.play-cricket.com/website/results/7344894
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344899@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260523T130000
+DTEND;TZID=Europe/London:20260523T190000
+SUMMARY:Broadwater 3rd XI v Pagham CC 3rd XI (A) - Lost by 8 wickets
+LOCATION:The Sir Patrick Moore Pavillion (Selsey CC)
+DESCRIPTION:Division 11 West (South)\nBroadwater 139 (30.2) v 140-2 (29.3)\
+ nhttps://broadwater.play-cricket.com/website/results/7344899
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344906@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260606T130000
+DTEND;TZID=Europe/London:20260606T190000
+SUMMARY:Broadwater 3rd XI v Ferring CC 1st XI (A) - Cancelled
+LOCATION:Ferring Cricket Club
+DESCRIPTION:Division 11 West (South)\nhttps://broadwater.play-cricket.com/w
+ ebsite/results/7344906
+STATUS:CANCELLED
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344909@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260613T130000
+DTEND;TZID=Europe/London:20260613T190000
+SUMMARY:Broadwater 3rd XI v Chichester Priory Park CC 4th XI (H) - Lost by 
+ 28 runs
+LOCATION:Hill Barn West
+DESCRIPTION:Division 11 West (South)\nBroadwater 81 (24.1) v 109 (34.4)\nht
+ tps://broadwater.play-cricket.com/website/results/7344909
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344912@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260620T130000
+DTEND;TZID=Europe/London:20260620T190000
+SUMMARY:Broadwater 3rd XI v Aldwick CC 2nd XI (A) - Lost by 6 wickets
+LOCATION:Felpham Oval
+DESCRIPTION:Division 11 West (South)\nBroadwater 118-5 (40.0) v 119-4 (27.2
+ )\nhttps://broadwater.play-cricket.com/website/results/7344912
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344916@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260627T130000
+DTEND;TZID=Europe/London:20260627T190000
+SUMMARY:Broadwater 3rd XI v Chippingdale CC 3rd XI (H) - Won by 68 runs
+LOCATION:Hill Barn West
+DESCRIPTION:Division 11 West (South)\nBroadwater 217-7 (40.0) v 149-9 (40.0
+ )\nhttps://broadwater.play-cricket.com/website/results/7344916
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344920@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260704T130000
+DTEND;TZID=Europe/London:20260704T190000
+SUMMARY:Broadwater 3rd XI v Bognor Regis CC 3rd XI (A) - Lost by 78 runs
+LOCATION:Queens Field\, West Meads Park
+DESCRIPTION:Division 11 West (South)\nBroadwater 137-5 (40.0) v 215-6 (40.0
+ )\nhttps://broadwater.play-cricket.com/website/results/7344920
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344924@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260711T130000
+DTEND;TZID=Europe/London:20260711T190000
+SUMMARY:Broadwater 3rd XI v Clymping CC 2nd XI (H) - Won by 8 wickets
+LOCATION:Hill Barn West
+DESCRIPTION:Division 11 West (South)\nBroadwater 81-2 (11.2) v 77 (21.4)\nh
+ ttps://broadwater.play-cricket.com/website/results/7344924
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344929@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260718T130000
+DTEND;TZID=Europe/London:20260718T190000
+SUMMARY:Broadwater 3rd XI v Lancing Manor CC 1st XI (A) - Lost by 10 wicket
+ s
+LOCATION:Lancing Manor Park\, Lancing
+DESCRIPTION:Division 11 West (South)\nBroadwater 84 (23.3) v 91-0 (12.5)\nh
+ ttps://broadwater.play-cricket.com/website/results/7344929
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344932@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260725T130000
+DTEND;TZID=Europe/London:20260725T190000
+SUMMARY:Broadwater 3rd XI v Pagham CC 3rd XI (H) - Lost by 6 wickets
+LOCATION:Hill Barn West
+DESCRIPTION:Division 11 West (South)\nBroadwater 103 (26.5) v 105-4 (26.4)\
+ nhttps://broadwater.play-cricket.com/website/results/7344932
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344940@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260808T130000
+DTEND;TZID=Europe/London:20260808T190000
+SUMMARY:Broadwater 3rd XI v Ferring CC 1st XI (H) - Lost by 99 runs
+LOCATION:Hill Barn West
+DESCRIPTION:Division 11 West (South)\nBroadwater 112 (15.0) v 211-7 (40.0)\
+ nhttps://broadwater.play-cricket.com/website/results/7344940
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344944@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260815T130000
+DTEND;TZID=Europe/London:20260815T190000
+SUMMARY:Broadwater 3rd XI v Chichester Priory Park CC 4th XI (A) - Lost by 
+ 26 runs
+LOCATION:Chichester Priory Park
+DESCRIPTION:Division 11 West (South)\nBroadwater 185 (39.1) v 211 (39.5)\nh
+ ttps://broadwater.play-cricket.com/website/results/7344944
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344948@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260822T130000
+DTEND;TZID=Europe/London:20260822T190000
+SUMMARY:Broadwater 3rd XI v Aldwick CC 2nd XI (H) - Lost by 10 wickets
+LOCATION:Broadwater Green
+DESCRIPTION:Division 11 West (South)\nBroadwater 71 (28.5) v 73-0 (11.5)\nh
+ ttps://broadwater.play-cricket.com/website/results/7344948
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344953@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260829T123000
+DTEND;TZID=Europe/London:20260829T183000
+SUMMARY:Broadwater 3rd XI v Chippingdale CC 3rd XI (A) - Cancelled
+LOCATION:Hill Barn East
+DESCRIPTION:Division 11 West (South)\nhttps://broadwater.play-cricket.com/w
+ ebsite/results/7344953
+STATUS:CANCELLED
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7344954@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260905T123000
+DTEND;TZID=Europe/London:20260905T183000
+SUMMARY:Broadwater 3rd XI v Bognor Regis CC 3rd XI (H) - Won by 28 runs
+LOCATION:Hill Barn West
+DESCRIPTION:Division 11 West (South)\nBroadwater 116-9 (40.0) v 88 (19.3)\n
+ https://broadwater.play-cricket.com/website/results/7344954
+END:VEVENT
+END:VCALENDAR

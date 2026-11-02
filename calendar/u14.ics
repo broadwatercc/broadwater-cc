@@ -1,0 +1,166 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Broadwater Cricket Club//Fixtures//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Broadwater CC - Under 14s
+X-WR-TIMEZONE:Europe/London
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+X-PUBLISHED-TTL:PT12H
+BEGIN:VTIMEZONE
+TZID:Europe/London
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+TZNAME:BST
+DTSTART:19700329T010000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+TZNAME:GMT
+DTSTART:19701025T020000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:pc-7529169@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260427T173000
+DTEND;TZID=Europe/London:20260427T203000
+SUMMARY:Broadwater Under 14s v Goring By Sea CC Under 14 (H) - Lost by 30 r
+ uns
+LOCATION:Add New Ground
+DESCRIPTION:West Area U14 (East)\nBroadwater 62 (17.3) v 92-8 (20.0)\nhttps
+ ://broadwater.play-cricket.com/website/results/7529169
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7529171@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260503T093000
+DTEND;TZID=Europe/London:20260503T123000
+SUMMARY:Broadwater Under 14s v West Chiltington & Thakeham CC Under 14 (A) 
+ - Lost by 7 wickets
+LOCATION:West Chiltington Recreation Ground
+DESCRIPTION:West Area U14 (East)\nBroadwater 127-9 (20.0) v 128-3 (14.3)\nh
+ ttps://broadwater.play-cricket.com/website/results/7529171
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7529173@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260531T090000
+DTEND;TZID=Europe/London:20260531T120000
+SUMMARY:Broadwater Under 14s v Findon CC Under 14 (H) - Lost by 7 wickets
+LOCATION:Add New Ground
+DESCRIPTION:West Area U14 (East)\nBroadwater 87-8 (20.0) v 90-3 (14.0)\nhtt
+ ps://broadwater.play-cricket.com/website/results/7529173
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7529187@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260607T093000
+DTEND;TZID=Europe/London:20260607T123000
+SUMMARY:Broadwater Under 14s v Worthing CC Under 14 (H) - Lost by 3 wickets
+LOCATION:Add New Ground
+DESCRIPTION:West Area U14 (East)\nBroadwater 109-8 (20.0) v 110-7 (15.5)\nh
+ ttps://broadwater.play-cricket.com/website/results/7529187
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7529179@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260615T173000
+DTEND;TZID=Europe/London:20260615T203000
+SUMMARY:Broadwater Under 14s v Storrington CC Under 14 (A) - Lost by 93 run
+ s
+LOCATION:Add New Ground
+DESCRIPTION:West Area U14 (East)\nBroadwater 90 (19.2) v 183-4 (20.0)\nhttp
+ s://broadwater.play-cricket.com/website/results/7529179
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7680420@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260628T130000
+DTEND;TZID=Europe/London:20260628T160000
+SUMMARY:Broadwater Under 14s v Bognor Regis CC Under 14 (A) - Won by 5 wick
+ ets
+LOCATION:The Regis Oval
+DESCRIPTION:Friendly\nBroadwater 80-5 (15.2) v 79-8 (15.3)\nhttps://broadwa
+ ter.play-cricket.com/website/results/7680420
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7686352@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260705T093000
+DTEND;TZID=Europe/London:20260705T123000
+SUMMARY:Broadwater Under 14s v Eastergate CC Under 14 (A) - Lost by 5 runs
+LOCATION:Slindon Common
+DESCRIPTION:Friendly\nBroadwater 97-6 (20.0) v 102 (19.2)\nhttps://broadwat
+ er.play-cricket.com/website/results/7686352
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7690095@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260713T180000
+DTEND;TZID=Europe/London:20260713T210000
+SUMMARY:Broadwater Under 14s v West Chiltington & Thakeham CC Under 14 (H) 
+ - Lost by 56 runs
+LOCATION:Broadwater Green
+DESCRIPTION:Friendly\nBroadwater 121-7 (20.0) v 177-6 (20.0)\nhttps://broad
+ water.play-cricket.com/website/results/7690095
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7721429@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260719T100000
+DTEND;TZID=Europe/London:20260719T130000
+SUMMARY:Broadwater Under 14s v Goring By Sea CC Under 14 (H) - Won by 17 ru
+ ns
+LOCATION:Hill Barn West
+DESCRIPTION:Friendly\nBroadwater 128-9 (24.0) v 111-9 (24.2)\nhttps://broad
+ water.play-cricket.com/website/results/7721429
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7730350@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260804T130000
+DTEND;TZID=Europe/London:20260804T160000
+SUMMARY:Broadwater Under 14s v Hastings & St Leonards Priory CC Under 14 (H
+ ) - Drawn
+LOCATION:Broadwater Green
+DESCRIPTION:Under 14 Mixed Shield\nBroadwater 251-9 (42.0) v 221-5 (38.0)\n
+ https://broadwater.play-cricket.com/website/results/7730350
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7730374@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260805T130000
+DTEND;TZID=Europe/London:20260805T160000
+SUMMARY:Broadwater Under 14s v Worthing CC Under 14 (A) - Drawn
+LOCATION:Manor Sports Ground
+DESCRIPTION:Under 14 Mixed Shield\nBroadwater 164-9 (46.0) v 297-2d (34.0)\
+ nhttps://broadwater.play-cricket.com/website/results/7730374
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7730399@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260806T130000
+DTEND;TZID=Europe/London:20260806T160000
+SUMMARY:Broadwater Under 14s v Storrington CC Under 14 (A) - Won by 4 wicke
+ ts
+LOCATION:Add New Ground
+DESCRIPTION:Under 14 Mixed Shield\nBroadwater 147-6 (25.1) v 144 (25.5)\nht
+ tps://broadwater.play-cricket.com/website/results/7730399
+END:VEVENT
+BEGIN:VEVENT
+UID:pc-7730376@broadwatercc
+DTSTAMP:20261102T184002Z
+DTSTART;TZID=Europe/London:20260807T130000
+DTEND;TZID=Europe/London:20260807T160000
+SUMMARY:Broadwater Under 14s v Haywards Heath CC Under 14 (H) - Lost by 89 
+ runs
+LOCATION:Broadwater Green
+DESCRIPTION:Under 14 Mixed Shield\nBroadwater 155 (33.5) v 244-4d (36.0)\nh
+ ttps://broadwater.play-cricket.com/website/results/7730376
+END:VEVENT
+END:VCALENDAR
