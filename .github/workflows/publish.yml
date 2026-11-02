@@ -1,0 +1,74 @@
+# Publishes the website, and keeps fixtures up to date from Play-Cricket.
+#
+# Runs:
+#   - whenever files are uploaded or changed on GitHub
+#   - every night, and on Saturday and Sunday evenings (fixtures sync)
+#   - on demand: Actions tab > "Publish website" > Run workflow
+#
+# The Play-Cricket step is skipped until the API token is added as a
+# repository secret called PLAYCRICKET_API_TOKEN
+# (Settings > Secrets and variables > Actions > New repository secret),
+# so it's safe to have this file in place before the token arrives.
+#
+# For this to work, Settings > Pages > Source must be set to "GitHub Actions".
+
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 1 * * *"      # 02:00 UK summer time, every night
+    - cron: "0 20 * * 6,0"   # 21:00 UK summer time, Saturday and Sunday
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      PLAYCRICKET_API_TOKEN: ${{ secrets.PLAYCRICKET_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        if: env.PLAYCRICKET_API_TOKEN != ''
+        with:
+          python-version: "3.12"
+
+      - name: Pull fixtures and results from Play-Cricket
+        if: env.PLAYCRICKET_API_TOKEN != ''
+        continue-on-error: true   # if Play-Cricket is down, still publish the site
+        run: python tools/update_fixtures.py
+
+      - name: Save updated fixtures
+        if: env.PLAYCRICKET_API_TOKEN != ''
+        run: |
+          git config user.name "fixtures-bot"
+          git config user.email "fixtures-bot@users.noreply.github.com"
+          git add js/matches.js calendar/ 2>/dev/null || git add js/matches.js
+          git diff --cached --quiet || git commit -m "Update fixtures and results from Play-Cricket"
+          git push
+
+      - name: Prepare website files
+        run: |
+          mkdir _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='tools' --exclude='_site' --exclude='README.txt' ./ _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
