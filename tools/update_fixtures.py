@@ -47,9 +47,8 @@ API_BASE = "https://play-cricket.com/api/v2/"
 # Checked in order; the first pattern that matches the team name wins.
 # Add explicit ids in settings.json ("team_ids") if a name doesn't match.
 DEFAULT_TEAM_PATTERNS = [
-    (r"\b(u|under)\s*-?\s*15", "u15"),
-    (r"\b(u|under)\s*-?\s*13", "u13"),
-    (r"\b(u|under)\s*-?\s*14", "u14"),
+    # any junior age group, e.g. "Under 12", "U13", "U-14" -> "u12", "u13", "u14"
+    (r"\b(?:u|under)\s*-?\s*(\d{1,2})\b", "u{age}"),
     (r"t\s*20|20\s*/\s*20|twenty|fire|midweek|slam", "t20"),
     (r"sunday|friendly", "sunday"),
     (r"\b1st\b|first", "1st-xi"),
@@ -145,9 +144,26 @@ def team_key_for(team_id, team_name, settings):
             return key
     name = (team_name or "").lower()
     for pattern, key in DEFAULT_TEAM_PATTERNS:
-        if re.search(pattern, name):
-            return key
+        found = re.search(pattern, name)
+        if found:
+            return key.format(age=int(found.group(1))) if "{age}" in key else key
     return None
+
+
+def display_season(today=None):
+    """The website is organised for the coming season: from October onwards
+    that's next year's season."""
+    today = today or datetime.now()
+    return today.year + 1 if today.month >= 10 else today.year
+
+
+def junior_key_for_season(key, match_season, show_season):
+    """Junior teams follow their players: last season's Under 12s are this
+    website's Under 13s, and so on. Adult teams are unchanged."""
+    m = re.fullmatch(r"u(\d{1,2})", key or "")
+    if not m:
+        return key
+    return f"u{int(m.group(1)) + (show_season - match_season)}"
 
 
 def pc_date(text):
@@ -244,6 +260,10 @@ def build_matches(fixtures, results, settings, unmapped):
         our_team_id = str(m.get(f"{side}_team_id"))
         our_team_name = m.get(f"{side}_team_name", "")
         key = team_key_for(our_team_id, our_team_name, settings)
+        if key:
+            key = junior_key_for_season(key, int(m["match_date"][-4:]), display_season())
+            if key not in TEAM_NAMES:
+                key = None
         if not key:
             unmapped.add(f"{our_team_name} (id {our_team_id})")
             continue
@@ -396,9 +416,14 @@ def main():
     season = args.season or datetime.now().year
 
     # Over the winter, also pick up next season's fixtures as soon as they're published
-    seasons = [season]
-    if not args.season and datetime.now().month >= 10:
-        seasons.append(season + 1)
+    # Fetch last season as well as this one, so the site isn't empty before
+    # the first match of a new season; from October also fetch next season.
+    if args.season:
+        seasons = [season]
+    elif datetime.now().month >= 10:
+        seasons = [season, season + 1]
+    else:
+        seasons = [season - 1, season]
 
     fixtures, results = [], []
     for s in seasons:
@@ -433,6 +458,8 @@ def main():
     print("Teams found on Play-Cricket:")
     for tid, name in sorted(seen.items(), key=lambda x: x[1] or ""):
         print(f"  {name:<25} id {tid:<10} -> {team_key_for(tid, name, settings) or 'NOT MAPPED'}")
+    print(f"Website is set up for the {display_season()} season: junior results from earlier "
+          f"seasons move up an age group to follow their players.")
 
     unmapped = set()
     matches = build_matches(fixtures, results, settings, unmapped)
