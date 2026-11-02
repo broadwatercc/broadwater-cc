@@ -1,30 +1,7 @@
-Claude
-/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Site · JS
 /* Broadwater CC — shared header, footer and fixtures rendering.
    You shouldn't need to edit this file: match data lives in data.js,
    and the menu is built from the NAV list below. */
- 
+
 const NAV = [
   { label: "Home", href: "index.html", page: "home" },
   { label: "BCC News", href: "news.html", page: "news" },
@@ -37,9 +14,9 @@ const NAV = [
   { label: "Juniors", href: "juniors.html", page: "juniors" },
   { label: "Fixtures & results", href: "fixtures.html", page: "fixtures" }
 ];
- 
+
 const RESULT_TEXT = { W: "Won", L: "Lost", D: "Drawn", T: "Tied", A: "Abandoned", C: "Cancelled" };
- 
+
 /* ---------- helpers ---------- */
 function el(tag, attrs = {}, html = "") {
   const e = document.createElement(tag);
@@ -62,7 +39,7 @@ function upcoming(m) {
   return !played(m) && new Date(m.date + "T23:59") >= today;
 }
 function teamName(key) { return TEAMS[key] ? TEAMS[key].name : key; }
- 
+
 function getMatches({ team = null, teams = null, mode = "all", limit = 0 } = {}) {
   let list = MATCHES.filter(m =>
     (!team || m.team === team) && (!teams || teams.includes(m.team)));
@@ -71,7 +48,7 @@ function getMatches({ team = null, teams = null, mode = "all", limit = 0 } = {})
   else list = list.sort((a, b) => parseDate(a) - parseDate(b));
   return limit ? list.slice(0, limit) : list;
 }
- 
+
 /* ---------- header & footer ---------- */
 function buildHeader() {
   const current = document.body.dataset.page;
@@ -84,7 +61,7 @@ function buildHeader() {
     }
     return `<li><a href="${item.href}"${active}>${item.label}</a></li>`;
   }).join("");
- 
+
   header.innerHTML = `
     <div class="header-inner">
       <a class="brand" href="index.html">
@@ -97,7 +74,7 @@ function buildHeader() {
       </nav>
     </div>`;
   document.body.prepend(header);
- 
+
   const toggle = header.querySelector(".menu-toggle");
   toggle.addEventListener("click", () => {
     const open = header.classList.toggle("nav-open");
@@ -114,13 +91,13 @@ function buildHeader() {
   document.addEventListener("click", () => header.querySelectorAll(".has-sub.open").forEach(li => {
     li.classList.remove("open"); li.querySelector("button").setAttribute("aria-expanded", "false");
   }));
- 
+
   // Solid header once scrolled (home page hero sits under a transparent header)
   const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 40);
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 }
- 
+
 function buildFooter() {
   const socials = [["Facebook", CLUB.facebook], ["Instagram", CLUB.instagram], ["X", CLUB.x]]
     .filter(([, url]) => url)
@@ -162,7 +139,7 @@ function buildFooter() {
     <p class="footer-base">&copy; ${new Date().getFullYear()} Broadwater Cricket Club &nbsp;|&nbsp; <a href="privacy.html">Privacy</a></p>`;
   document.body.append(footer);
 }
- 
+
 /* ---------- match tables ---------- */
 function matchRow(m, showTeam) {
   const isPlayed = played(m);
@@ -186,7 +163,7 @@ function matchRow(m, showTeam) {
       <td class="c-res">${badge}<span class="sum">${summary}${link}</span></td>
     </tr>`;
 }
- 
+
 function renderTable(container, opts) {
   const list = getMatches(opts);
   const showTeam = !opts.team;
@@ -202,17 +179,17 @@ function renderTable(container, opts) {
       <tbody>${list.map(m => matchRow(m, showTeam)).join("")}</tbody>
     </table>`;
 }
- 
+
 function sampleNotice() {
   if (SAMPLE_DATA) return `<p class="sample-note">Sample fixtures shown. Run the Play-Cricket script, or edit <code>js/matches.js</code>, to show real ones.</p>`;
   return LAST_SYNC ? `<p class="sync-note">Updated from Play-Cricket ${esc(LAST_SYNC)}</p>` : "";
 }
- 
+
 /* ---------- phone calendars ----------
    Any element with data-calendar gets "Add to my calendar" buttons.
    Optional data-team="1st-xi" limits it to one team. */
 const MATCH_HOURS = { "1st-xi": 7, "2nd-xi": 7, "3rd-xi": 6, sunday: 5, t20: 3, u15: 3, u14: 3, u13: 3 };
- 
+
 function icsEscape(s) { return String(s).replace(/\\/g, "\\\\").replace(/;/g, "\\;").replace(/,/g, "\\,").replace(/\n/g, "\\n"); }
 function icsStamp(d) { // local wall-clock time, used with TZID=Europe/London
   const p = n => String(n).padStart(2, "0");
@@ -245,14 +222,14 @@ function buildICS(matches, name) {
   lines.push("END:VCALENDAR");
   return lines.map(icsFold).join("\r\n") + "\r\n";
 }
- 
+
 function renderCalendars() {
   document.querySelectorAll("[data-calendar]").forEach(box => {
     const key = box.dataset.team || "";
     const label = key ? teamName(key) : "all teams";
     const upcoming = getMatches({ team: key || null, mode: "fixtures" });
     const file = key || "all";
- 
+
     // Subscribing keeps a phone up to date; only possible once the site is online
     // and the Play-Cricket script has written the calendar files.
     let subscribe = "";
@@ -267,7 +244,7 @@ function renderCalendars() {
           <p>Subscribed calendars update by themselves when fixtures change.</p>
         </details>`;
     }
- 
+
     box.innerHTML = `
       <div class="cal-box">
         <div class="cal-text">
@@ -279,7 +256,7 @@ function renderCalendars() {
           <button class="btn ${subscribe ? "btn-outline" : "btn-navy"}" type="button" ${upcoming.length ? "" : "disabled"}>${upcoming.length ? "Download calendar file" : "No fixtures to add yet"}</button>
         </div>
       </div>`;
- 
+
     const btn = box.querySelector("button");
     btn.addEventListener("click", () => {
       const ics = buildICS(upcoming, `Broadwater CC - ${key ? teamName(key) : "all teams"}`);
@@ -291,7 +268,7 @@ function renderCalendars() {
     });
   });
 }
- 
+
 /* Any element with data-matches="results|fixtures|all" gets a table.
    Optional: data-team="1st-xi" or data-teams="u15,u14,u13", data-limit="5" */
 function renderAllTables() {
@@ -305,7 +282,7 @@ function renderAllTables() {
   });
   document.querySelectorAll("[data-sample-note]").forEach(c => c.innerHTML = sampleNotice());
 }
- 
+
 /* ---------- tabs ---------- */
 function initTabs() {
   document.querySelectorAll(".tabs").forEach(tabs => {
@@ -337,7 +314,7 @@ function initTabs() {
     }
   });
 }
- 
+
 /* ---------- team pages (first-xi.html etc.) ---------- */
 function renderTeamPage() {
   const key = document.body.dataset.team;
@@ -352,7 +329,7 @@ function renderTeamPage() {
     if (t.focus) n.style.setProperty("--focus", t.focus);
   });
   document.querySelectorAll("[data-matches], [data-calendar]").forEach(n => n.dataset.team = key);
- 
+
   // season summary from results
   let res = getMatches({ team: key, mode: "results" }).filter(played);
   const season = res.length ? parseDate(res[0]).getFullYear() : null;
@@ -365,7 +342,7 @@ function renderTeamPage() {
   if (sum) sum.innerHTML = [["Played", res.length], ["Won", count("W")], ["Lost", count("L")], ["Drawn", count("D") + count("T")]]
     .map(([l, n]) => `<div class="plate"><span class="n">${n}</span><span class="l">${l}</span></div>`).join("");
 }
- 
+
 /* ---------- home page scoreboard ---------- */
 function renderScoreboard() {
   const board = document.querySelector("[data-scoreboard]");
@@ -404,7 +381,7 @@ function renderScoreboard() {
   }
   board.innerHTML = html + `<a class="board-link" href="fixtures.html">All fixtures and results</a>`;
 }
- 
+
 /* ---------- fixtures page filter ---------- */
 function initFixturesFilter() {
   const sel = document.getElementById("team-filter");
@@ -420,7 +397,7 @@ function initFixturesFilter() {
   };
   sel.addEventListener("change", apply);
 }
- 
+
 /* ---------- map ---------- */
 function renderMap() {
   // OpenStreetMap: a real map that sets no cookies and has no advertising
@@ -447,7 +424,7 @@ function renderMap() {
   document.querySelectorAll("[data-club]").forEach(n => { n.textContent = CLUB[n.dataset.club]; });
   document.querySelectorAll("[data-club-mail]").forEach(n => { n.href = "mailto:" + CLUB.email; if (!n.textContent.trim()) n.textContent = CLUB.email; });
 }
- 
+
 /* ---------- photo focus (settings in js/photos.js) ---------- */
 function applyPhotoFocus() {
   // photos.js is loaded here, so the page files never need changing.
@@ -465,7 +442,7 @@ function applyPhotoFocus() {
     if (m && PHOTO_FOCUS[m[1]]) el.style.setProperty("--focus", PHOTO_FOCUS[m[1]]);
   });
 }
- 
+
 document.addEventListener("DOMContentLoaded", () => {
   buildHeader();
   renderTeamPage();
@@ -479,5 +456,3 @@ document.addEventListener("DOMContentLoaded", () => {
   buildFooter();
   requestAnimationFrame(() => document.body.classList.add("ready"));
 });
- 
-Claude finished the response
