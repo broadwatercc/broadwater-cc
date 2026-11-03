@@ -45,7 +45,7 @@ function getMatches({ team = null, teams = null, mode = "all", limit = 0 } = {})
     (!team || m.team === team) && (!teams || teams.includes(m.team)));
   if (mode === "results") list = list.filter(m => !upcoming(m)).sort((a, b) => parseDate(b) - parseDate(a));
   else if (mode === "fixtures") list = list.filter(upcoming).sort((a, b) => parseDate(a) - parseDate(b));
-  else list = list.sort((a, b) => parseDate(a) - parseDate(b));
+  else list = list.sort((a, b) => parseDate(b) - parseDate(a)); //newest first
   return limit ? list.slice(0, limit) : list;
 }
 
