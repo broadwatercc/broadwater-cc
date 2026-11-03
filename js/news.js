@@ -31,6 +31,16 @@ Second paragraph here.`
    ===================================================================== */
 
 const NEWS = [
+   {
+      id: "Congratulations Juniors",
+      date: "2026-11-03",
+      title: "Junior Success in Sussex Pathway",
+      image: "",
+      alt: "",
+      text: `Huge congratulations to our SIX junior players who have made their age group pathway group squads at Sussex for the coming season.
+
+What a testament to their hard work, passion and effort. The whole club is so proud of all of you!`
+    },
   {
       id: "awards-night-2026",
       date: "2026-10-27",
