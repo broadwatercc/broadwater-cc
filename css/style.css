@@ -495,3 +495,8 @@ a.sponsor-slot:hover { border-color: var(--gold); }
 }
 /* Hero readability: stronger tagline */
 .hero-tag { color: #ffffff; font-weight: 500; }
+/* Extra contrast for people who ask for it in their device settings */
+@media (prefers-contrast: more) {
+  .hero::before { background: rgba(12,24,56,.82); }
+  .hero-tag { color: #ffffff; }
+}
