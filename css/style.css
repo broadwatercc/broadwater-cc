@@ -481,3 +481,11 @@ a.sponsor-slot:hover { border-color: var(--gold); }
 .prose ul { padding-left: 1.2em; }
 .prose li { margin-bottom: .4em; }
 .board-empty .board-teams { font-size: 1.3rem; }
+
+/* Hero readability: darker behind the text */
+.hero::before {
+  background:
+    linear-gradient(90deg, rgba(12,24,56,.85) 0%, rgba(12,24,56,.6) 40%, rgba(12,24,56,0) 70%),
+    linear-gradient(180deg, rgba(12,24,56,.55) 0%, rgba(12,24,56,0) 28%),
+    linear-gradient(0deg, rgba(12,24,56,.95) 0%, rgba(12,24,56,.55) 45%, rgba(12,24,56,.15) 75%);
+}
