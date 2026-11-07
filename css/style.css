@@ -489,3 +489,9 @@ a.sponsor-slot:hover { border-color: var(--gold); }
     linear-gradient(180deg, rgba(12,24,56,.55) 0%, rgba(12,24,56,0) 28%),
     linear-gradient(0deg, rgba(12,24,56,.95) 0%, rgba(12,24,56,.55) 45%, rgba(12,24,56,.15) 75%);
 }
+/* Hero readability: soft text shadow */
+.hero-year, .hero h1, .hero-tag {
+  text-shadow: 0 2px 14px rgba(0,0,0,.65), 0 1px 3px rgba(0,0,0,.6);
+}
+/* Hero readability: stronger tagline */
+.hero-tag { color: #ffffff; font-weight: 500; }
