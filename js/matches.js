@@ -5,7 +5,7 @@
    ===================================================================== */
 
 const SAMPLE_DATA = false;
-const LAST_SYNC = "08 November 2026, 01:56";
+const LAST_SYNC = "09 November 2026, 02:02";
 const CALENDAR_FILES = true;
 
 const MATCHES = [
@@ -115,5 +115,6 @@ const MATCHES = [
   {"id": "7343171", "team": "1st-xi", "date": "2026-09-05", "time": "12:30", "opponent": "Burgess Hill CC 1st XI", "venue": "A", "competition": "Division 4 West", "ground": "St Johns Park, Burgess Hill, Sussex", "result": "L", "us": "99 (28.1)", "them": "307-4 (45)", "summary": "Lost by 208 runs", "scorecard": "https://broadwater.play-cricket.com/website/results/7343171"},
   {"id": "7344431", "team": "2nd-xi", "date": "2026-09-05", "time": "12:30", "opponent": "Horsham Trinity CC 2nd XI", "venue": "H", "competition": "Division 9 West", "ground": "Broadwater Green", "result": "L", "us": "148 (38.5)", "them": "149-9 (30.2)", "summary": "Lost by 1 wicket", "scorecard": "https://broadwater.play-cricket.com/website/results/7344431"},
   {"id": "7344954", "team": "3rd-xi", "date": "2026-09-05", "time": "12:30", "opponent": "Bognor Regis CC 3rd XI", "venue": "H", "competition": "Division 11 West (South)", "ground": "Hill Barn West", "result": "W", "us": "116-9 (40.0)", "them": "88 (19.3)", "summary": "Won by 28 runs", "scorecard": "https://broadwater.play-cricket.com/website/results/7344954"},
-  {"id": "7496438", "team": "sunday", "date": "2026-09-06", "time": "13:30", "opponent": "Boxgrove CC Friendly XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "W", "us": "165-8 (35.0)", "them": "154 (31.4)", "summary": "Won by 11 runs", "scorecard": "https://broadwater.play-cricket.com/website/results/7496438"}
+  {"id": "7496438", "team": "sunday", "date": "2026-09-06", "time": "13:30", "opponent": "Boxgrove CC Friendly XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "W", "us": "165-8 (35.0)", "them": "154 (31.4)", "summary": "Won by 11 runs", "scorecard": "https://broadwater.play-cricket.com/website/results/7496438"},
+  {"id": "7785128", "team": "1st-xi", "date": "2027-05-01", "time": "", "opponent": "Portslade CC 1st XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "", "us": "", "them": "", "summary": "", "scorecard": "https://broadwater.play-cricket.com/website/results/7785128"}
 ];
