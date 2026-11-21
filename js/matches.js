@@ -5,7 +5,7 @@
    ===================================================================== */
 
 const SAMPLE_DATA = false;
-const LAST_SYNC = "21 November 2026, 02:07";
+const LAST_SYNC = "21 November 2026, 20:30";
 const CALENDAR_FILES = true;
 
 const MATCHES = [
