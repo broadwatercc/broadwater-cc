@@ -5,7 +5,7 @@
    ===================================================================== */
 
 const SAMPLE_DATA = false;
-const LAST_SYNC = "26 November 2026, 02:18";
+const LAST_SYNC = "27 November 2026, 09:32";
 const CALENDAR_FILES = true;
 
 const MATCHES = [
@@ -118,6 +118,7 @@ const MATCHES = [
   {"id": "7496438", "team": "sunday", "date": "2026-09-06", "time": "13:30", "opponent": "Boxgrove CC Friendly XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "W", "us": "165-8 (35.0)", "them": "154 (31.4)", "summary": "Won by 11 runs", "scorecard": "https://broadwater.play-cricket.com/website/results/7496438"},
   {"id": "7785128", "team": "1st-xi", "date": "2027-05-01", "time": "", "opponent": "Portslade CC 1st XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "", "us": "", "them": "", "summary": "", "scorecard": "https://broadwater.play-cricket.com/website/results/7785128"},
   {"id": "7792611", "team": "sunday", "date": "2027-05-23", "time": "", "opponent": "Steyning Rebels CC 1st XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "", "us": "", "them": "", "summary": "", "scorecard": "https://broadwater.play-cricket.com/website/results/7792611"},
+  {"id": "7802715", "team": "sunday", "date": "2027-06-13", "time": "", "opponent": "Worthing Chargers CC Friendly XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "", "us": "", "them": "", "summary": "", "scorecard": "https://broadwater.play-cricket.com/website/results/7802715"},
   {"id": "7785982", "team": "sunday", "date": "2027-07-25", "time": "13:30", "opponent": "Angmering CC Friendly XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "", "us": "", "them": "", "summary": "", "scorecard": "https://broadwater.play-cricket.com/website/results/7785982"},
   {"id": "7785976", "team": "sunday", "date": "2027-09-05", "time": "13:30", "opponent": "Eartham House CC Eartham and Boxgrove XI", "venue": "H", "competition": "Friendly", "ground": "Broadwater Green", "result": "", "us": "", "them": "", "summary": "", "scorecard": "https://broadwater.play-cricket.com/website/results/7785976"}
 ];
